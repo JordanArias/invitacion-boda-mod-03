@@ -1,0 +1,129 @@
+/* ==========================================================================
+   RESPONSIVE.CSS - ADAPTABILIDAD MÓVIL, TABLET Y ESCRITORIO
+   BODA LUCÍA & PEDRO (STITCH AI - MODELO 03)
+   ========================================================================== */
+
+/* 1. Dispositivos Móviles Pequeños (< 380px) */
+@media (max-width: 380px) {
+  .hero-couple-name {
+    font-size: 2.65rem;
+  }
+
+  .envelope-container {
+    max-width: 300px;
+    height: 255px;
+  }
+
+  .locations-grid-2col,
+  .gift-options-grid,
+  .rsvp-two-col-grid {
+    gap: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .pill-action-btn {
+    padding: 0.38rem 0.65rem;
+    font-size: 10px;
+  }
+}
+
+/* 2. Móviles Estándar (< 640px) */
+@media (max-width: 639px) {
+  body {
+    background-color: var(--wedding-cream);
+  }
+
+  .main-invitation-container {
+    max-width: 100%;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+  }
+}
+
+/* 3. Tablets y Escritorio (min-width: 640px) */
+@media (min-width: 640px) {
+  body {
+    background-color: #242120;
+    background-image: radial-gradient(circle at 50% 20%, #352828 0%, #1c1817 100%);
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .main-invitation-container {
+    max-width: 520px;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(197, 160, 89, 0.32);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+  }
+
+  .hero-marsala-section {
+    padding: 3rem 0 2.5rem 0;
+  }
+
+  .hero-top-content,
+  .hero-bottom-content {
+    padding: 0 2rem;
+  }
+
+  .hero-couple-name {
+    font-size: 3.5rem;
+  }
+
+  .hero-wave-top-svg {
+    height: 62px;
+  }
+
+  .hero-wave-bottom-svg {
+    height: 66px;
+  }
+
+  .hero-audio-player {
+    max-width: 370px;
+  }
+
+  .welcome-paper-section {
+    padding: 3.5rem 2.25rem;
+  }
+
+  .date-countdown-card,
+  .family-blocks-stack {
+    max-width: 390px;
+  }
+
+  .locations-grid-2col,
+  .dress-code-block,
+  .itinerary-block,
+  .gift-registry-block,
+  .gallery-block,
+  .rsvp-photos-block {
+    max-width: 420px;
+  }
+}
+
+/* 4. Pantallas Grandes / Desktop (min-width: 1024px) */
+@media (min-width: 1024px) {
+  body {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .main-invitation-container {
+    max-width: 560px;
+  }
+
+  .hero-arch-frame {
+    max-width: 360px;
+  }
+
+  .locations-grid-2col,
+  .dress-code-block,
+  .itinerary-block,
+  .gift-registry-block,
+  .gallery-block,
+  .rsvp-photos-block {
+    max-width: 450px;
+  }
+}

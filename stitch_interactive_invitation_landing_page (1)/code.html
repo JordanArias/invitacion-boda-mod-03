@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Boda Lucía &amp; Pedro - Invitación</title>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Cormorant Garamond, Montserrat, Great Vibes -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&amp;family=Great+Vibes&amp;family=Montserrat:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            terracotta: {
+              DEFAULT: '#7a3e3e',
+              deep: '#5a2b2b',
+              light: '#945353',
+              soft: '#c48b8b'
+            },
+            ivory: {
+              50: '#fdfbf7',
+              100: '#f9f5ec',
+              200: '#f1e9d8'
+            },
+            gold: {
+              light: '#f5e3b5',
+              DEFAULT: '#cbb081',
+              dark: '#9d7c43',
+              champagne: '#e6d3af'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Montserrat"', 'sans-serif'],
+            script: ['"Great Vibes"', 'cursive']
+          },
+          boxShadow: {
+            'wax': '0 6px 16px rgba(100, 60, 20, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.4), inset 0 -3px 6px rgba(90, 50, 15, 0.6)',
+            'envelope': '0 20px 45px -10px rgba(60, 25, 25, 0.4), 0 0 2px rgba(0,0,0,0.1)',
+            'card': '0 10px 30px -5px rgba(0, 0, 0, 0.15)'
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles for Envelope & Animations -->
+<style data-purpose="envelope-dynamics">
+    /* Perspective and 3D environment */
+    .perspective-1000 {
+      perspective: 1200px;
+    }
+    
+    /* Envelope Flap 3D transform */
+    .envelope-flap {
+      transform-origin: top center;
+      transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.3s;
+      backface-visibility: visible;
+    }
+
+    .envelope-container.opened .envelope-flap {
+      transform: rotateX(175deg);
+      z-index: 10;
+    }
+
+    /* Wax Seal fade & slide */
+    .wax-seal {
+      transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .envelope-container.opened .wax-seal {
+      transform: scale(0.6) translateY(-40px);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Sliding inner invitation letter */
+    .letter-card {
+      transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s;
+    }
+    .envelope-container.opened .letter-card {
+      transform: translateY(-135px);
+      box-shadow: 0 15px 35px rgba(70, 20, 20, 0.25);
+    }
+
+    /* Ribbon animation */
+    .ribbon-band {
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .envelope-container.opened .ribbon-band {
+      opacity: 0;
+      transform: scaleX(1.1);
+      pointer-events: none;
+    }
+
+    /* Modal / Full View transition */
+    #revealed-experience {
+      transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Shimmer effect for gold accents */
+    .gold-shimmer {
+      background: linear-gradient(135deg, #caa96e 0%, #faeccb 50%, #b89352 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gold-foil-border {
+      border-image: linear-gradient(135deg, #d3b378, #fdf4d8, #a88448) 1;
+    }
+
+    /* Subtle pulse animation for touch interaction */
+    @keyframes softPulse {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 4px 10px rgba(184, 147, 82, 0.4)); }
+      50% { transform: scale(1.04); filter: drop-shadow(0 6px 16px rgba(220, 180, 110, 0.6)); }
+    }
+    .pulse-seal {
+      animation: softPulse 2.8s infinite ease-in-out;
+    }
+  </style>
+<!-- END: Custom Styles for Envelope & Animations -->
+</head>
+<body class="bg-[#fcfaf6] text-[#4a3b32] font-sans h-full min-h-screen relative overflow-x-hidden flex flex-col justify-between selection:bg-gold-light selection:text-terracotta-deep">
+<!-- BEGIN: Ambient Background Decor -->
+<!-- Subtle handmade linen noise & decorative botanicals -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" data-purpose="background-ambient">
+<!-- Top Left Botanical Branch -->
+<svg class="absolute -top-6 -left-8 w-44 h-44 text-gold-DEFAULT/40 opacity-70 transform rotate-12" fill="currentColor" viewbox="0 0 100 100">
+<path d="M12,90 C30,75 45,45 85,15 C65,30 35,45 25,75 Z M32,58 C24,52 22,40 28,34 C34,28 46,30 42,42 C38,54 34,56 32,58 Z M52,42 C44,36 42,24 48,18 C54,12 66,14 62,26 C58,38 54,40 52,42 Z M68,28 C62,22 62,12 68,6 C74,2 84,6 80,16 C76,26 70,26 68,28 Z" opacity="0.8"></path>
+</svg>
+<!-- Top Right Botanical Spray -->
+<svg class="absolute -top-10 -right-8 w-48 h-48 text-gold-DEFAULT/35 opacity-70 transform -scale-x-100 rotate-45" fill="currentColor" viewbox="0 0 100 100">
+<path d="M10,90 Q40,60 85,12 C60,40 30,65 15,85 M30,55 C22,48 24,35 32,30 C40,25 50,30 45,42 M55,38 C48,30 50,18 58,14 C66,10 75,16 70,28" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
+</svg>
+<!-- Bottom Left Subtle Foliage -->
+<svg class="absolute -bottom-10 -left-10 w-44 h-44 text-gold-DEFAULT/30 transform rotate-90" fill="currentColor" viewbox="0 0 100 100">
+<path d="M15,95 Q50,55 90,20 Q40,50 15,95" fill="none" stroke="currentColor" stroke-width="2"></path>
+<circle cx="50" cy="55" fill="currentColor" opacity="0.6" r="4"></circle>
+<circle cx="70" cy="38" fill="currentColor" opacity="0.6" r="3.5"></circle>
+</svg>
+<!-- Bottom Right Romantic Branch (Matched to preview graphic) -->
+<svg class="absolute -bottom-6 -right-6 w-44 h-44 text-gold-DEFAULT/40 opacity-75 transform -rotate-12" fill="currentColor" viewbox="0 0 100 100">
+<path d="M90,90 C70,75 55,45 15,15 C35,30 65,45 75,75 Z M68,58 C76,52 78,40 72,34 C66,28 54,30 58,42 C62,54 66,56 68,58 Z M48,42 C56,36 58,24 52,18 C46,12 34,14 38,26 C42,38 46,40 48,42 Z" opacity="0.75"></path>
+</svg>
+<!-- Grain / Soft Aura -->
+<div class="absolute inset-0 bg-[radial-gradient(#baa37a_1px,transparent_1px)] [background-size:24px_24px] opacity-15"></div>
+</div>
+<!-- END: Ambient Background Decor -->
+<!-- BEGIN: Main Page Shell -->
+<main class="relative z-10 w-full max-w-md mx-auto min-h-screen px-4 py-6 flex flex-col justify-between items-center text-center">
+<!-- Top Monogram & Subtle Audio Status -->
+<header class="w-full flex items-center justify-between pt-1 px-2" data-purpose="top-nav-bar">
+<!-- Monogram small badge -->
+<div class="flex items-center gap-2">
+<span class="font-serif tracking-widest text-xs uppercase font-medium text-terracotta/80 border-b border-gold-DEFAULT/50 pb-0.5">
+          L &amp; P
+        </span>
+<span class="text-[10px] text-stone-400 tracking-wider">| 27.08.2026</span>
+</div>
+<!-- Compact Audio Pill Toggle -->
+<button aria-label="Reproducir música de fondo" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/80 border border-gold-DEFAULT/30 backdrop-blur-sm text-[#7a3e3e] shadow-sm active:scale-95 transition-all text-xs" data-purpose="music-controller" id="bg-music-toggle">
+<span class="flex h-2 w-2 relative" id="music-indicator">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-DEFAULT opacity-75 hidden"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-stone-300" id="music-dot"></span>
+</span>
+<svg class="w-3.5 h-3.5 text-terracotta" fill="currentColor" id="music-icon-note" viewbox="0 0 24 24">
+<path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"></path>
+</svg>
+<span class="text-[11px] font-sans font-medium tracking-tight text-stone-600" id="music-text">Perfect</span>
+</button>
+<!-- Invisible Audio Element with Fallback Synthesizer or Royalty Free Sound -->
+<audio id="wedding-audio" loop="" preload="auto">
+<source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-wedding-acoustic-112199.mp3" type="audio/mpeg"/>
+</audio>
+</header>
+<!-- Middle Hero: Header Title & Call To Attention -->
+<div class="my-auto py-4 w-full flex flex-col items-center">
+<!-- Tiny Welcome Pretitle -->
+<div class="mb-2">
+<p class="font-sans text-[11px] uppercase tracking-[0.32em] text-terracotta/90 font-medium">
+          Nuestra Boda
+        </p>
+<div class="flex items-center justify-center gap-2 mt-1">
+<span class="h-[0.5px] w-6 bg-gold-DEFAULT/60"></span>
+<span class="text-gold-DEFAULT text-xs">✤</span>
+<span class="h-[0.5px] w-6 bg-gold-DEFAULT/60"></span>
+</div>
+</div>
+<!-- Main Couple Names -->
+<h1 class="font-serif text-4xl sm:text-5xl tracking-wide text-terracotta font-normal my-1">
+        Lucía <span class="font-script text-3xl sm:text-4xl text-gold-dark lowercase px-0.5">&amp;</span> Pedro
+      </h1>
+<p class="font-serif italic text-stone-600 text-sm tracking-wider mt-0.5">
+        "Dos vidas, un mismo camino"
+      </p>
+<!-- BEGIN: Interactive Luxury Envelope Container -->
+<section aria-label="Sobre de boda interactivo. Clic para abrir" class="envelope-container relative w-full max-w-[340px] h-[270px] mt-8 mb-6 perspective-1000 cursor-pointer select-none group" data-purpose="interactive-envelope" id="envelope-stage">
+<!-- BACK FLAP / INNER LINING (Terra Cotta Velvety Depth) -->
+<div class="absolute inset-0 bg-[#653131] rounded-2xl shadow-envelope overflow-hidden border border-gold-DEFAULT/30">
+<!-- Patterned subtle foil lining interior -->
+<div class="absolute inset-2 border border-gold-DEFAULT/20 rounded-xl bg-[#592a2a] flex items-center justify-center">
+<!-- Delicate Watermark In Interior -->
+<div class="text-gold-champagne/15 font-serif text-7xl font-light italic">
+              L &amp; P
+            </div>
+</div>
+</div>
+<!-- THE LETTER / CARD INSIDE (Slides up on click) -->
+<article class="letter-card absolute left-3 right-3 top-3 h-[240px] bg-ivory-50 rounded-xl p-4 shadow-card border border-[#e8ddcb] flex flex-col justify-between items-center text-center z-[5] overflow-hidden" data-purpose="inner-card-preview" id="sliding-letter">
+<!-- Elegant Double Border -->
+<div class="absolute inset-1.5 border border-gold-DEFAULT/40 rounded-lg pointer-events-none"></div>
+<!-- Card Header Decor -->
+<div class="pt-2 z-10">
+<span class="text-[9px] uppercase tracking-[0.25em] text-[#9c7842] font-semibold block mb-0.5">
+              Invitación de Honor
+            </span>
+<h2 class="font-serif text-2xl text-terracotta tracking-wider font-semibold">
+              LUCÍA &amp; PEDRO
+            </h2>
+<div class="w-12 h-px bg-gold-DEFAULT/70 mx-auto mt-1 mb-1"></div>
+</div>
+<!-- Card Center Summary Info -->
+<div class="z-10 py-1 space-y-1">
+<p class="font-sans text-[11px] text-stone-500 uppercase tracking-widest">
+              SÁBADO
+            </p>
+<p class="font-serif text-xl font-bold tracking-widest text-[#3d2727]">
+              27 · AGOSTO · 2026
+            </p>
+<p class="font-serif italic text-xs text-stone-600">
+              Ceremonia &amp; Recepción Social
+            </p>
+</div>
+<!-- Mini Call to Enter on the Letter itself -->
+<div class="pb-2 z-10 w-full">
+<div class="inline-flex items-center gap-1.5 text-xs text-terracotta font-medium tracking-wide border-t border-gold-DEFAULT/30 pt-1.5">
+<span>Para: Nuestra Familia y Amigos</span>
+</div>
+</div>
+<!-- Subtle bottom floral corner ornament -->
+<div class="absolute bottom-1 right-1 opacity-20 pointer-events-none">
+<svg class="w-12 h-12 text-terracotta" fill="currentColor" viewbox="0 0 24 24">
+<path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8 3 0 6-2 7-5 1 3 4 5 7 5 0 4.4-3.6 8-8 8z"></path>
+</svg>
+</div>
+</article>
+<!-- ENVELOPE LOWER POCKET FRONT (Warm Marsala / Terracotta velvet tone) -->
+<div class="absolute inset-x-0 bottom-0 h-[175px] bg-gradient-to-t from-[#673333] to-[#7a3e3e] rounded-b-2xl z-[7] border-t border-gold-light/20 shadow-sm flex flex-col justify-end overflow-hidden">
+<!-- Fine Gold Stitched Contour -->
+<div class="absolute inset-2 border-b border-x border-gold-DEFAULT/40 rounded-b-xl pointer-events-none"></div>
+<!-- Bottom Geometric Fold Lines for Realism -->
+<div class="absolute inset-0 pointer-events-none opacity-20">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 340 175">
+<line stroke="#f6e1b6" stroke-width="1.5" x1="0" x2="170" y1="175" y2="75"></line>
+<line stroke="#f6e1b6" stroke-width="1.5" x1="340" x2="170" y1="175" y2="75"></line>
+</svg>
+</div>
+<!-- Recipient Name on Pocket -->
+<div class="relative z-10 mb-4 px-4 text-center">
+<p class="font-script text-xl text-gold-champagne tracking-normal">
+              Estás cordialmente invitado
+            </p>
+<p class="font-sans text-[10px] tracking-[0.2em] uppercase text-ivory-100/70 mt-0.5">
+              Toca para abrir la carta
+            </p>
+</div>
+</div>
+<!-- SILK RIBBON SASH (Across the envelope) -->
+<div class="ribbon-band absolute top-[88px] inset-x-0 h-9 bg-gradient-to-r from-[#e3dac9] via-[#f7f3eb] to-[#e3dac9] shadow-md z-[8] flex items-center justify-center border-y border-gold-DEFAULT/40">
+<span class="font-sans text-[9px] tracking-[0.28em] text-[#7a3e3e] uppercase font-semibold">
+            Nuestra Historia de Amor
+          </span>
+</div>
+<!-- TOP TRIANGULAR FLAP (Folded Down by Default) -->
+<div class="envelope-flap absolute top-0 inset-x-0 h-[115px] z-[9] drop-shadow-md origin-top" id="envelope-flap" style="clip-path: polygon(0% 0%, 100% 0%, 50% 100%);">
+<!-- Flap Body with Velvet Texture & Inner Golden Seam -->
+<div class="w-full h-full bg-gradient-to-b from-[#834343] to-[#713737] relative flex items-center justify-center">
+<!-- Gold Trim Inside Flap -->
+<div class="absolute inset-x-1 top-0 h-[110px] opacity-70 pointer-events-none" style="clip-path: polygon(2% 0%, 98% 0%, 50% 96%); border-bottom: 1.5px solid #d4b57e;"></div>
+</div>
+</div>
+<!-- 3D GOLD MONOGRAM WAX SEAL (Centered at flap tip) -->
+<div class="wax-seal pulse-seal absolute top-[75px] left-1/2 -translate-x-1/2 w-16 h-16 rounded-full z-[12] cursor-pointer flex items-center justify-center select-none" data-purpose="interactive-wax-seal" id="wax-seal" title="Abrir Sobre">
+<!-- Seal Outer Wax Organic Rim -->
+<div class="w-full h-full rounded-full bg-gradient-to-tr from-[#947132] via-[#e2c589] to-[#8d6928] p-1 shadow-wax flex items-center justify-center transform active:scale-95 transition-transform">
+<!-- Inner Embossed Monogram Circle -->
+<div class="w-full h-full rounded-full bg-[#af8843] border border-[#fde8b8]/60 flex flex-col items-center justify-center text-center shadow-inner relative overflow-hidden">
+<!-- Metallic Highlight Glare -->
+<div class="absolute -top-3 -left-3 w-8 h-8 bg-white/35 rounded-full blur-[2px] pointer-events-none"></div>
+<!-- Laurel Wreath in Seal -->
+<svg class="w-10 h-10 text-[#543b12] absolute opacity-45" fill="currentColor" viewbox="0 0 100 100">
+<path d="M20,65 C20,40 35,25 50,15 C65,25 80,40 80,65 C70,75 60,82 50,85 C40,82 30,75 20,65 Z" fill="none" stroke="currentColor" stroke-dasharray="6,4" stroke-width="4"></path>
+</svg>
+<!-- Initials -->
+<span class="font-serif font-bold text-xs tracking-wider text-[#3d2908] drop-shadow-[0_1px_1px_rgba(255,245,215,0.7)] z-10">
+                L • P
+              </span>
+<span class="text-[7px] text-[#4d340d] font-sans font-semibold tracking-tighter uppercase z-10 -mt-0.5">
+                2026
+              </span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Interactive Luxury Envelope Container -->
+<!-- Action Instructions / Tap Badge -->
+<div class="flex flex-col items-center mt-2 transition-opacity duration-300" id="cta-hint-wrapper">
+<button class="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-gradient-to-r from-terracotta to-terracotta-deep text-ivory-50 shadow-lg shadow-terracotta/25 hover:shadow-xl active:scale-95 transition-all text-xs uppercase tracking-widest font-medium border border-gold-DEFAULT/50" data-purpose="open-envelope-trigger" id="open-envelope-btn" type="button">
+<span class="text-gold-light text-sm">✉</span>
+<span>Abrir Invitación</span>
+<svg class="w-3.5 h-3.5 text-gold-light transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<p class="font-sans text-[11px] text-stone-400 mt-2 tracking-wide">
+          Haz clic en el sobre o el sello para desplegar
+        </p>
+</div>
+</div>
+<!-- BEGIN: Modal Dialog for Full Invitation Entrance -->
+<!-- Triggered once the envelope opens or when user taps 'Ver Invitación Completa' -->
+<div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4 opacity-0 pointer-events-none transition-all duration-500" data-purpose="invitation-details-modal" id="revealed-experience" role="dialog">
+<div class="bg-ivory-50 w-full max-w-sm rounded-t-3xl sm:rounded-3xl p-6 shadow-2xl border border-gold-DEFAULT/40 transform translate-y-8 transition-transform duration-500 max-h-[92vh] overflow-y-auto relative" id="modal-card">
+<!-- Close / Dismiss Mini Button -->
+<button aria-label="Cerrar vista previa" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-stone-200/60 text-stone-600 flex items-center justify-center hover:bg-stone-300 active:scale-90 text-sm font-sans" id="close-modal-btn">
+          ✕
+        </button>
+<!-- Top Monogram Crest -->
+<div class="text-center pt-2">
+<div class="inline-block relative">
+<span class="font-serif text-3xl font-normal text-terracotta tracking-wider">L / P</span>
+<div class="w-16 h-px bg-gold-DEFAULT mx-auto mt-1 mb-2"></div>
+</div>
+<p class="font-sans text-[11px] uppercase tracking-[0.25em] text-[#8e5252] font-semibold">
+            ¡Nos Casamos!
+          </p>
+<h3 class="font-serif text-3xl text-stone-800 tracking-normal mt-1 font-semibold" id="modal-title">
+            Lucía &amp; Pedro
+          </h3>
+</div>
+<!-- Date & Location Highlights -->
+<div class="my-5 py-4 border-y border-stone-200/80 text-center space-y-2.5">
+<div class="flex justify-center items-center gap-3 text-stone-700">
+<span class="font-serif text-lg font-medium text-terracotta">Sábado</span>
+<span class="text-gold-dark font-serif text-xl">•</span>
+<span class="font-serif text-lg font-bold text-terracotta">27 Agosto 2026</span>
+</div>
+<p class="font-sans text-xs text-stone-600 tracking-wide">
+            Iglesia Santa Isabel (20:00 hrs) • Salón Los Olivos
+          </p>
+<div class="inline-block px-3 py-1 rounded bg-[#f4ebe1] text-[#7a3e3e] text-[11px] font-medium tracking-wider">
+            Código: Elegante Formal
+          </div>
+</div>
+<!-- Romantic Quote Preview -->
+<p class="font-serif italic text-center text-sm text-stone-600 px-4 leading-relaxed mb-6">
+          "Nos llena de alegría compartir con ustedes el inicio de esta nueva etapa."
+        </p>
+<!-- Direct Actions to Enter Full Experience -->
+<div class="space-y-2.5">
+<a class="w-full flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl bg-terracotta hover:bg-terracotta-deep text-white font-sans text-xs uppercase tracking-widest font-semibold shadow-md active:scale-95 transition-all text-center" href="#continuar" id="enter-full-site-btn">
+<span>Ver Invitación Completa ✨</span>
+</a>
+<button class="w-full py-2.5 text-center text-xs text-stone-500 hover:text-terracotta transition-colors tracking-wider font-sans" id="replay-envelope-btn" type="button">
+            Volver a cerrar el sobre ✉
+          </button>
+</div>
+</div>
+</div>
+<!-- END: Modal Dialog -->
+<!-- BEGIN: Minimal Footer -->
+<footer class="w-full py-2 text-center" data-purpose="page-footer">
+<div class="flex items-center justify-center gap-1.5 text-stone-400 text-xs font-serif italic">
+<span>Con amor</span>
+<svg class="w-3 h-3 text-terracotta fill-current inline-block mx-0.5" viewbox="0 0 24 24">
+<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+</svg>
+<span>Lucía &amp; Pedro</span>
+</div>
+</footer>
+<!-- END: Minimal Footer -->
+</main>
+<!-- END: Main Page Shell -->
+<!-- BEGIN: Interactive Behavior Script -->
+<script data-purpose="envelope-interactivity">
+    document.addEventListener('DOMContentLoaded', () => {
+      const envelopeStage = document.getElementById('envelope-stage');
+      const waxSeal = document.getElementById('wax-seal');
+      const openEnvelopeBtn = document.getElementById('open-envelope-btn');
+      const revealedModal = document.getElementById('revealed-experience');
+      const modalCard = document.getElementById('modal-card');
+      const closeModalBtn = document.getElementById('close-modal-btn');
+      const replayBtn = document.getElementById('replay-envelope-btn');
+      const enterSiteBtn = document.getElementById('enter-full-site-btn');
+      
+      // Audio controller elements
+      const musicToggle = document.getElementById('bg-music-toggle');
+      const weddingAudio = document.getElementById('wedding-audio');
+      const musicDot = document.getElementById('music-dot');
+      const musicPing = musicDot.previousElementSibling;
+      const musicText = document.getElementById('music-text');
+
+      let isOpened = false;
+      let isPlayingMusic = false;
+
+      // Toggle background music
+      function toggleMusic(playOnly = false) {
+        if (!weddingAudio) return;
+        
+        if (playOnly && isPlayingMusic) return;
+
+        if (weddingAudio.paused) {
+          weddingAudio.play().then(() => {
+            isPlayingMusic = true;
+            musicDot.classList.remove('bg-stone-300');
+            musicDot.classList.add('bg-emerald-500');
+            if (musicPing) musicPing.classList.remove('hidden');
+            musicText.textContent = 'Sonando ♪';
+            musicText.classList.add('text-terracotta');
+          }).catch((err) => {
+            // Autoplay policies might restrict audio without user touch
+            console.log('Audio autoplay prevented by browser policy:', err);
+          });
+        } else if (!playOnly) {
+          weddingAudio.pause();
+          isPlayingMusic = false;
+          musicDot.classList.remove('bg-emerald-500');
+          musicDot.classList.add('bg-stone-300');
+          if (musicPing) musicPing.classList.add('hidden');
+          musicText.textContent = 'Perfect';
+          musicText.classList.remove('text-terracotta');
+        }
+      }
+
+      // Open envelope flow
+      function openEnvelope() {
+        if (isOpened) return;
+        isOpened = true;
+
+        // Auto start music on guest interaction
+        toggleMusic(true);
+
+        // Animate envelope open state
+        envelopeStage.classList.add('opened');
+
+        // Reveal the comprehensive card dialog after smooth animation completes
+        setTimeout(() => {
+          revealedModal.classList.remove('pointer-events-none', 'opacity-0');
+          revealedModal.classList.add('opacity-100');
+          modalCard.classList.remove('translate-y-8');
+          modalCard.classList.add('translate-y-0');
+        }, 850);
+      }
+
+      // Close / Reset envelope
+      function closeEnvelope() {
+        revealedModal.classList.add('opacity-0', 'pointer-events-none');
+        modalCard.classList.add('translate-y-8');
+        modalCard.classList.remove('translate-y-0');
+
+        setTimeout(() => {
+          envelopeStage.classList.remove('opened');
+          isOpened = false;
+        }, 300);
+      }
+
+      // Event listeners
+      if (envelopeStage) {
+        envelopeStage.addEventListener('click', (e) => {
+          // If already opened, tapping the card directly opens modal if closed
+          if (!isOpened) {
+            openEnvelope();
+          } else {
+            revealedModal.classList.remove('pointer-events-none', 'opacity-0');
+            revealedModal.classList.add('opacity-100');
+          }
+        });
+      }
+
+      if (openEnvelopeBtn) {
+        openEnvelopeBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openEnvelope();
+        });
+      }
+
+      if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', () => {
+          revealedModal.classList.add('opacity-0', 'pointer-events-none');
+          modalCard.classList.add('translate-y-8');
+        });
+      }
+
+      if (replayBtn) {
+        replayBtn.addEventListener('click', () => {
+          closeEnvelope();
+        });
+      }
+
+      if (musicToggle) {
+        musicToggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleMusic(false);
+        });
+      }
+
+      if (enterSiteBtn) {
+        enterSiteBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          // Visual feedback before navigation
+          enterSiteBtn.innerHTML = '<span>Abriendo itinerario y mapa...</span>';
+          setTimeout(() => {
+            alert('¡Bienvenidos a la boda de Lucía & Pedro!\n\n(Aquí se enlaza directamente a la sección principal de la invitación: Ceremonia, Recepción, Confirmación y Mesa de Regalos)');
+            enterSiteBtn.innerHTML = '<span>Ver Invitación Completa ✨</span>';
+          }, 400);
+        });
+      }
+    });
+  </script>
+<!-- END: Interactive Behavior Script -->
+</body></html>

@@ -1,0 +1,28 @@
+# DOCUMENTO TÉCNICO – INVITACIÓN DE BODA LUCÍA & PEDRO (MODELO 03)
+
+Web de invitación de boda **Lucía & Pedro**, desarrollada a partir del diseño de Stitch AI (Sobre 3D Interactivo + Landing Page Editorial) con arquitectura modular propia.
+
+### Diseño
+- Estilo: Elegante, romántico y minimalista.
+- Paleta: Marsala / Terracota (`#783b3e`, `#5e2a2c`, `#ab6566`), Crema Papel (`#f9f6f0`, `#f7f3ec`) y Dorado (`#c5a059`, `#e6cf9c`).
+- Tipografías: *Cormorant Garamond*, *Playfair Display*, *Great Vibes* y *Montserrat*.
+- Diseño completamente responsive para móviles, tablets y ordenadores.
+- Transiciones y revelados en scroll fluidos y sutiles (`IntersectionObserver`).
+
+### Funcionalidades
+- Pantalla inicial con Sobre 3D interactivo, cinta de seda, carta deslizable y sello de cera dorado animado (`L • P 2026`).
+- Reproductor de música MP3 local integrado en portada con barra de progreso interactiva, tiempos y botón flotante sincronizado.
+- Cuenta regresiva en tiempo real (días, horas, minutos y segundos) y enlace a Google Calendar.
+- Secciones de Ceremonia Religiosa y Recepción Social con enlaces directos a Google Maps.
+- Código de vestimenta con iconos vectoriales y paleta de muestras de color.
+- Itinerario vertical ilustrado.
+- Mesa de regalos con datos de transferencia bancaria, copiado rápido de número de cuenta al portapapeles y código QR ampliable.
+- Galería de fotografías funcional con visor Lightbox.
+- Enlace para compartir fotografías del evento y confirmación de asistencia (RSVP) mediante formulario interactivo y WhatsApp.
+
+### Estructura del Proyecto
+- `css/`: `global.css`, `animations.css`, `envelope.css`, `invitation.css`, `responsive.css`.
+- `js/`: `config.js`, `envelope.js`, `music.js`, `countdown.js`, `gallery.js`, `rsvp.js`, `interactions.js`, `invitation.js`.
+- `img/`: fotografías de la boda, código QR y logotipo BizFlow.
+- `iconos/`: iconos e imágenes decorativas.
+- `music/`: pista de audio MP3 local (`cancion_boda.mp3`).

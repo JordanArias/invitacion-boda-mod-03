@@ -1,0 +1,43 @@
+# Archivos del Sistema Operativo
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editores e IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*~
+
+# Dependencias y compilaciones (si se usan herramientas locales)
+node_modules/
+dist/
+.cache/
+.netlify/
+
+# Variables de entorno y registros
+.env
+.env.local
+.env.*.local
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos temporales y respaldos
+*.tmp
+*.bak
+*.old
+
+# Carpetas de referencia de diseño Stitch AI (descomentar si no se desean subir al repositorio)
+# stitch_interactive_invitation_landing_page/
+# stitch_interactive_invitation_landing_page (1)/

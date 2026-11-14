@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#5e2a2c" />
+  <title>Invitación de Boda - Lucía &amp; Pedro</title>
+
+  <!-- Google Fonts: Cormorant Garamond, Great Vibes, Montserrat, Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Great+Vibes&amp;family=Montserrat:wght@200;300;400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Hojas de Estilos Modulares -->
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/envelope.css" />
+  <link rel="stylesheet" href="css/invitation.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+
+  <!-- ====================================================================
+       CONTENEDOR PRINCIPAL DE LA INVITACIÓN COMPLETA (VISTA DIRECTA)
+       ==================================================================== -->
+  <main class="main-invitation-container" role="main">
+
+    <!-- ==========================================
+         1. PORTADA / HERO SECTION
+         ========================================== -->
+    <section class="hero-marsala-section marsala-gradient-bg" data-purpose="hero-section">
+
+      <div class="hero-top-content">
+        <!-- Monograma Superior con Icono laurel.png -->
+        <div class="hero-monogram-wrap" data-purpose="monogram">
+          <div class="hero-laurel-box">
+            <img src="img/laurel.png" alt="Corona de laurel dorada" class="hero-laurel-img" />
+            <div class="hero-monogram-letters">
+              <span>L</span>
+              <span class="hero-monogram-slash">/</span>
+              <span>P</span>
+            </div>
+          </div>
+        </div>
+
+        <span class="hero-pretitle">NOS CASAMOS</span>
+        <h1 class="hero-couple-name">LUCÍA</h1>
+        <span class="hero-couple-amp">&amp;</span>
+        <h2 class="hero-couple-name" style="margin-bottom: 0.75rem;">PEDRO</h2>
+
+        <div class="hero-date-badge">
+          <p class="hero-date-numbers">27 · 08 · 2026</p>
+          <p class="hero-date-day">SÁBADO</p>
+        </div>
+      </div>
+
+      <!-- Fotografía Principal a Ancho Completo con Ondas Arriba y Abajo -->
+      <div class="hero-photo-container" data-purpose="couple-photo-hero">
+        <div class="hero-wave-frame">
+          <!-- Onda Superior con Filete Dorado -->
+          <svg class="hero-wave-top-svg" viewBox="0 0 500 60" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,0 L500,0 L500,22 C370,58 160,-6 0,38 Z" fill="#6b3235"></path>
+            <path d="M0,42 C160,-2 370,62 500,26" fill="none" stroke="#c5a059" stroke-width="1.8" opacity="0.85"></path>
+          </svg>
+
+          <img class="hero-arch-img" src="img/portada.jpg"
+            alt="Lucía y Pedro sonriendo juntos en el día de su boda" title="Toca para ampliar fotografía" />
+          <div class="hero-arch-overlay" aria-hidden="true"></div>
+
+          <!-- Onda Inferior con Filete Dorado -->
+          <svg class="hero-wave-bottom-svg" viewBox="0 0 500 65" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,28 C150,68 340,-4 500,36 L500,65 L0,65 Z" fill="#58282b"></path>
+            <path d="M0,24 C150,64 340,-8 500,32" fill="none" stroke="#c5a059" stroke-width="1.8" opacity="0.85"></path>
+          </svg>
+        </div>
+      </div>
+
+      <div class="hero-bottom-content">
+        <div class="hero-quote-box">
+          <blockquote class="hero-quote-text">
+            “Dos vidas, un mismo camino, una sola historia de amor.”
+          </blockquote>
+        </div>
+
+        <div class="hero-audio-player" data-purpose="audio-player">
+          <div class="player-song-info">
+            <div class="player-song-title">Perfect</div>
+            <div class="player-song-artist">Ed Sheeran</div>
+          </div>
+
+          <div class="player-progress-wrap">
+            <div id="player-progress-bar" class="player-progress-bar" title="Adelantar o retroceder canción">
+              <div id="player-progress-fill" class="player-progress-fill" style="width: 26%;">
+                <span class="player-progress-thumb"></span>
+              </div>
+            </div>
+            <div class="player-times-row">
+              <span id="player-current-time">0:00</span>
+              <span id="player-total-time">4:10</span>
+            </div>
+          </div>
+
+          <div class="player-controls-row">
+            <button id="player-shuffle-btn" type="button" class="player-ctrl-btn" aria-label="Aleatorio">
+              <i class="fa-solid fa-shuffle"></i>
+            </button>
+            <button id="player-prev-btn" type="button" class="player-ctrl-btn" aria-label="Reiniciar canción">
+              <i class="fa-solid fa-backward-step"></i>
+            </button>
+            <button id="player-play-btn" type="button" class="player-play-main-btn" aria-label="Reproducir o pausar">
+              <i id="player-play-icon" class="fa-solid fa-play" style="font-size: 0.85rem; margin-left: 2px;"></i>
+            </button>
+            <button id="player-next-btn" type="button" class="player-ctrl-btn" aria-label="Siguiente canción">
+              <i class="fa-solid fa-forward-step"></i>
+            </button>
+            <button id="player-repeat-btn" type="button" class="player-ctrl-btn active" aria-label="Repetir canción">
+              <i class="fa-solid fa-repeat"></i>
+            </button>
+          </div>
+
+          <div class="player-footnote">
+            <span class="player-footnote-text">REPRODUCE MÚSICA DURANTE TU VISITA</span>
+            <i class="fa-regular fa-heart" style="color: var(--wedding-gold); font-size: 0.75rem;"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hojas Doradas Flotantes con Movimiento de Viento (hoja.png) -->
+      <div class="hero-botanical-top-right leaf-wind-right leaf-wind-slow" aria-hidden="true">
+        <img src="img/hoja.png" alt="Hoja botánica dorada" />
+      </div>
+      <div class="hero-botanical-accent leaf-wind-left" aria-hidden="true">
+        <img src="img/hoja.png" alt="Hoja botánica dorada" />
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         2. BIENVENIDOS, CUENTA REGRESIVA Y FAMILIA
+         ========================================== -->
+    <section class="welcome-paper-section paper-texture" data-purpose="welcome-section">
+
+      <!-- Hoja Dorada Flotante Superior Derecha -->
+      <div class="welcome-botanical-top-right leaf-wind-right leaf-wind-delayed" aria-hidden="true">
+        <img src="img/hoja.png" alt="Hoja botánica dorada" />
+      </div>
+
+      <h2 class="welcome-heading">BIENVENIDOS</h2>
+
+      <div class="leaf-divider-row" aria-hidden="true">
+        <span class="leaf-divider-line"></span>
+        <svg style="width: 1.75rem; height: 1.25rem; color: var(--wedding-gold);" fill="currentColor"
+          viewBox="0 0 40 25">
+          <path d="M20,12 C14,5 2,8 0,12 C2,16 14,19 20,12 Z"></path>
+          <path d="M20,12 C26,5 38,8 40,12 C38,16 26,19 20,12 Z"></path>
+          <circle cx="20" cy="12" fill="#99732e" r="2"></circle>
+        </svg>
+        <span class="leaf-divider-line"></span>
+      </div>
+
+      <p class="welcome-lead-text">
+        Nos llena de alegría compartir con ustedes el inicio de esta nueva etapa.
+      </p>
+
+      <div class="date-countdown-card" data-purpose="countdown-grid">
+        <div class="date-col-box">
+          <i class="fa-regular fa-calendar-check col-gold-icon"></i>
+          <span class="col-upper-title">SÁBADO</span>
+          <span class="col-muted-sub">27 DE AGOSTO</span>
+          <span class="col-big-serif">2026</span>
+          <a id="google-calendar-btn" href="#" target="_blank" rel="noopener noreferrer" class="calendar-mini-link">
+            + Agendar fecha
+          </a>
+        </div>
+
+        <div class="countdown-col-box">
+          <i class="fa-regular fa-clock col-gold-icon"></i>
+          <span class="col-upper-title">FALTAN</span>
+          <div class="days-inline-group">
+            <span id="days" class="days-number-big">246</span>
+            <span class="days-unit-label">DÍAS</span>
+          </div>
+          <div class="live-hms-bar">
+            <span><span id="hours" class="val">00</span>h</span>
+            <span>:</span>
+            <span><span id="minutes" class="val">00</span>m</span>
+            <span>:</span>
+            <span><span id="seconds" class="val">00</span>s</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="inspirational-quote-wrap" data-purpose="inspirational-quote">
+        <div class="quote-mark-gold">“</div>
+        <blockquote class="inspirational-quote-text">
+          El amor se fortalece con la familia y con quienes siempre nos han acompañado.
+        </blockquote>
+        <div class="quote-mark-gold" style="margin-top: 0.25rem;">”</div>
+      </div>
+
+      <div class="family-blocks-stack" data-purpose="family-honor">
+        <div class="family-group-box">
+          <div class="terracotta-pill-header">NUESTROS PADRES</div>
+          <div class="family-names-list">
+            <p>María González<span class="light-name">Carlos Torres</span></p>
+            <div class="family-mini-rule"></div>
+            <p>Elena Vargas<span class="light-name">Jorge Fernández</span></p>
+          </div>
+        </div>
+
+        <div class="family-group-box">
+          <div class="terracotta-pill-header">NUESTROS PADRINOS</div>
+          <div class="family-names-list">
+            <p>Andrea Rojas</p>
+            <p class="family-amp-gold">&amp;</p>
+            <p>Miguel Salazar</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hoja Dorada Flotante Inferior Izquierda -->
+      <div class="welcome-botanical-accent leaf-wind-left leaf-wind-slow" aria-hidden="true">
+        <img src="img/hoja.png" alt="Hoja botánica dorada" />
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         3. CEREMONIA Y CELEBRACIÓN, VESTIMENTA,
+            ITINERARIO, REGALOS, GALERÍA Y RSVP
+         ========================================== -->
+    <section class="event-details-section paper-texture" data-purpose="event-details-section">
+
+      <!-- Hojas Doradas Flotantes de Fondo en la Sección -->
+      <div class="section-leaf-accent pos-dress-right leaf-wind-right" aria-hidden="true">
+        <img src="img/hoja.png" alt="Hoja botánica dorada" />
+      </div>
+      <div class="section-leaf-accent pos-itinerary-left leaf-wind-left leaf-wind-delayed" aria-hidden="true">
+        <img src="img/hoja.png" alt="Hoja botánica dorada" />
+      </div>
+      <div class="section-leaf-accent pos-gifts-right leaf-wind-right leaf-wind-slow" aria-hidden="true">
+        <img src="img/hoja.png" alt="Hoja botánica dorada" />
+      </div>
+      <div class="section-leaf-accent pos-rsvp-left leaf-wind-left" aria-hidden="true">
+        <img src="img/hoja.png" alt="Hoja botánica dorada" />
+      </div>
+
+      <div class="section-marsala-arch marsala-gradient-bg wave-arch-bottom">
+        <div class="arch-watermark-top-right leaf-wind-right" aria-hidden="true">
+          <img src="img/hoja.png" alt="Hoja botánica dorada" />
+        </div>
+        <h2 class="arch-section-title">
+          CEREMONIA<br />Y CELEBRACIÓN
+        </h2>
+        <div class="arch-gold-underline"></div>
+      </div>
+
+      <div class="locations-grid-2col" data-purpose="locations-grid">
+        <div class="location-col-item">
+          <div class="location-icon-box" aria-hidden="true">
+            <svg style="width: 2.5rem; height: 2.5rem;" fill="none" stroke="currentColor" stroke-width="1.5"
+              viewBox="0 0 24 24">
+              <path d="M12 2v4m0 0H9m3 0h3m-3 4l-7 4v8h14v-8l-7-4z M9 22v-5a3 3 0 016 0v5" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <h3 class="location-title">Ceremonia<br />Religiosa</h3>
+          <p class="location-place-name">Iglesia Santa Isabel</p>
+          <p class="location-address">Av. Principal Nº123</p>
+          <p class="location-time">20:00 hrs.</p>
+          <a id="church-map-btn" href="https://maps.google.com/?q=Iglesia+Santa+Isabel+Av+Principal+123"
+            target="_blank" rel="noopener noreferrer" class="pill-action-btn">
+            <i class="fa-solid fa-location-dot" style="font-size: 10px;"></i>
+            <span>Ver Ubicación</span>
+          </a>
+        </div>
+
+        <div class="location-col-item with-left-divider">
+          <div class="location-icon-box" aria-hidden="true">
+            <svg style="width: 2.5rem; height: 2.5rem;" fill="none" stroke="currentColor" stroke-width="1.5"
+              viewBox="0 0 24 24">
+              <path d="M8 21h8m-4-7v7m-4-7l-2-7h6l-2 7m8 0l-2-7h6l-2 7m-1 7v-7m4 7h-8" stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <h3 class="location-title">Recepción<br />Social</h3>
+          <p class="location-place-name">Salón Los Olivos</p>
+          <p class="location-address">Av. Jardín Nº456</p>
+          <p class="location-time">21:00 hrs.</p>
+          <a id="reception-map-btn" href="https://maps.google.com/?q=Salon+Los+Olivos+Av+Jardin+456" target="_blank"
+            rel="noopener noreferrer" class="pill-action-btn">
+            <i class="fa-solid fa-location-dot" style="font-size: 10px;"></i>
+            <span>Ver Ubicación</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="dress-code-block" data-purpose="dress-code">
+        <div class="subsection-header-row">
+          <span class="subsection-header-line"></span>
+          <span class="subsection-header-title">CÓDIGO DE VESTIMENTA</span>
+          <span class="subsection-header-line"></span>
+        </div>
+
+        <div class="dress-code-row">
+          <div class="dress-icons-pair" aria-hidden="true">
+            <svg style="width: 2.25rem; height: 2.75rem;" fill="none" stroke="currentColor" stroke-width="1.4"
+              viewBox="0 0 36 44">
+              <path d="M12 4 L18 16 L24 4 L28 4 L32 20 L28 40 L8 40 L4 20 L8 4 Z"></path>
+              <path d="M18 16 L18 40"></path>
+              <path d="M15 10 L18 13 L21 10"></path>
+              <circle cx="18" cy="22" fill="currentColor" r="1"></circle>
+              <circle cx="18" cy="27" fill="currentColor" r="1"></circle>
+            </svg>
+            <div class="dress-icons-sep"></div>
+            <svg style="width: 2.25rem; height: 2.75rem;" fill="none" stroke="currentColor" stroke-width="1.4"
+              viewBox="0 0 36 44">
+              <path d="M14 4 C14 8 22 8 22 4 L26 14 L21 17 L29 40 L7 40 L15 17 L10 14 Z"></path>
+              <path d="M15 17 C17 18 19 18 21 17"></path>
+            </svg>
+          </div>
+
+          <div class="dress-swatches-info">
+            <span class="dress-style-label">Elegante Formal</span>
+            <div class="dress-swatches-row">
+              <span class="color-swatch-dot" style="background-color: #f2e6d8;" title="Champagne"></span>
+              <span class="color-swatch-dot" style="background-color: #e3bebe;" title="Rosa empolvado"></span>
+              <span class="color-swatch-dot" style="background-color: #c2847a;" title="Terracota"></span>
+              <span class="color-swatch-dot" style="background-color: #7d3f44;" title="Marsala"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="itinerary-block" data-purpose="itinerary">
+        <div class="subsection-header-row" style="margin-bottom: 1.5rem;">
+          <span class="subsection-header-line"></span>
+          <span class="subsection-header-title">ITINERARIO</span>
+          <span class="subsection-header-line"></span>
+        </div>
+
+        <div class="vertical-timeline-list">
+          <div class="vertical-timeline-line" aria-hidden="true"></div>
+
+          <div class="itinerary-step-row">
+            <div class="itinerary-step-icon" aria-hidden="true">
+              <img src="iconos/libro.gif" alt="Ceremonia Religiosa" />
+            </div>
+            <div class="itinerary-step-dot"></div>
+            <div class="itinerary-step-text">
+              <span class="itinerary-step-time">20:00 hrs.</span>
+              <span class="itinerary-step-name">Ceremonia Religiosa</span>
+            </div>
+          </div>
+
+          <div class="itinerary-step-row">
+            <div class="itinerary-step-icon" aria-hidden="true">
+              <img src="iconos/brindis.gif" alt="Recepción Social" />
+            </div>
+            <div class="itinerary-step-dot"></div>
+            <div class="itinerary-step-text">
+              <span class="itinerary-step-time">21:00 hrs.</span>
+              <span class="itinerary-step-name">Recepción Social</span>
+            </div>
+          </div>
+
+          <div class="itinerary-step-row">
+            <div class="itinerary-step-icon" aria-hidden="true">
+              <img src="iconos/dinner.gif" alt="Cena" />
+            </div>
+            <div class="itinerary-step-dot"></div>
+            <div class="itinerary-step-text">
+              <span class="itinerary-step-time">22:00 hrs.</span>
+              <span class="itinerary-step-name">Cena</span>
+            </div>
+          </div>
+
+          <div class="itinerary-step-row">
+            <div class="itinerary-step-icon" aria-hidden="true">
+              <img src="iconos/celebration.gif" alt="Fiesta" />
+            </div>
+            <div class="itinerary-step-dot"></div>
+            <div class="itinerary-step-text">
+              <span class="itinerary-step-time">23:00 hrs.</span>
+              <span class="itinerary-step-name">Fiesta</span>
+            </div>
+          </div>
+
+          <div class="itinerary-step-row">
+            <div class="itinerary-step-icon" aria-hidden="true">
+              <img src="iconos/noche.gif" alt="Fin de Fiesta" />
+            </div>
+            <div class="itinerary-step-dot"></div>
+            <div class="itinerary-step-text">
+              <span class="itinerary-step-time">00:00 hrs.</span>
+              <span class="itinerary-step-name">Torta</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gift-registry-block" data-purpose="gift-registry">
+        <div style="margin-bottom: 0.75rem;" aria-hidden="true">
+          <svg style="width: 2rem; height: 1rem; color: var(--wedding-gold);" fill="currentColor" viewBox="0 0 40 20">
+            <path d="M20,10 C14,3 2,6 0,10 C2,14 14,17 20,10 Z"></path>
+            <path d="M20,10 C26,3 38,6 40,10 C38,14 26,17 20,10 Z"></path>
+          </svg>
+        </div>
+
+        <blockquote class="gift-quote-text">
+          “Tu presencia es el mejor regalo, pero si deseas tener un detalle con nosotros, esta es una sugerencia.”
+        </blockquote>
+
+        <div class="gift-options-grid">
+          <div class="gift-col-box">
+            <div class="location-icon-box" style="width: 2.5rem; height: 2.5rem; margin-bottom: 0.25rem;"
+              aria-hidden="true">
+              <svg style="width: 2rem; height: 2rem;" fill="none" stroke="currentColor" stroke-width="1.6"
+                viewBox="0 0 24 24">
+                <rect height="13" rx="2" width="18" x="3" y="8"></rect>
+                <path d="M12 8v13M3 12h18M12 8a3 3 0 1 0-3-3c2 0 3 3 3 3zm0 0a3 3 0 1 1 3-3c-2 0-3 3-3 3z"></path>
+              </svg>
+            </div>
+            <h4 class="gift-col-title">Sugerencia<br />de Regalo</h4>
+            <p class="gift-sub-detail">Sobre o detalle en recepción</p>
+          </div>
+
+          <div class="gift-col-box with-left-divider">
+            <div class="location-icon-box" style="width: 2.5rem; height: 2.5rem; margin-bottom: 0.25rem;"
+              aria-hidden="true">
+              <svg style="width: 2rem; height: 2rem;" fill="none" stroke="currentColor" stroke-width="1.6"
+                viewBox="0 0 24 24">
+                <path d="M3 21h18M4 10h16M12 3L2 10h20L12 3zM6 10v7M10 10v7M14 10v7M18 10v7"></path>
+              </svg>
+            </div>
+            <h4 class="gift-col-title">Transferencia</h4>
+            <div class="bank-details-list">
+              <p style="font-weight: 500;">Banco Nacional</p>
+              <p style="color: var(--wedding-text-muted);">Titular: Lucía Torres</p>
+              <p class="bank-account-mono">
+                Nº de cuenta:<br />
+                <span id="bank-account-number">1234567890</span>
+              </p>
+            </div>
+            <button id="copy-account-btn" type="button" class="copy-bank-btn">
+              <i class="fa-regular fa-copy"></i>
+              <span>Copiar cuenta</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="qr-card-wrap" data-purpose="qr-code">
+          <div class="qr-frame-box">
+            <img src="img/qr_transferencia.svg" alt="Código QR para transferencia o regalo" class="qr-code-image"
+              title="Toca para ampliar el código QR" />
+          </div>
+          <span class="qr-caption-text">O escanea el QR</span>
+        </div>
+      </div>
+
+      <div class="gallery-block" data-purpose="wedding-gallery">
+        <div class="subsection-header-row">
+          <span class="subsection-header-line"></span>
+          <span class="subsection-header-title">NUESTROS MOMENTOS</span>
+          <span class="subsection-header-line"></span>
+        </div>
+
+        <div class="gallery-grid-2x2">
+          <div class="gallery-thumb-item" title="Ampliar fotografía">
+            <img class="gallery-thumb-img" src="img/foto_1.jpg" alt="Celebración y brindis de Lucía y Pedro" />
+          </div>
+          <div class="gallery-thumb-item" title="Ampliar fotografía">
+            <img class="gallery-thumb-img" src="img/foto_2.jpg" alt="Detalle floral de la boda" />
+          </div>
+          <div class="gallery-thumb-item" title="Ampliar fotografía">
+            <img class="gallery-thumb-img" src="img/foto_4.jpg" alt="Ceremonia y decoración nupcial" />
+          </div>
+          <div class="gallery-thumb-item" title="Ampliar fotografía">
+            <img class="gallery-thumb-img" src="img/foto_5.jpg" alt="Alianzas y manos de los novios" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Confirmar Asistencia (RSVP con WhatsApp y Formulario de Opciones) -->
+      <div class="rsvp-photos-block" data-purpose="rsvp-section" id="confirmar-asistencia">
+
+        <div class="rsvp-box-card">
+          <div class="rsvp-icon-top" aria-hidden="true">
+            <i class="fa-regular fa-calendar-check"></i>
+          </div>
+
+          <h2 class="rsvp-title-main">CONFIRMAR ASISTENCIA</h2>
+          <p class="rsvp-script-sub">RSVP</p>
+          <div class="rsvp-heart-divider" aria-hidden="true">♥</div>
+
+          <p class="rsvp-instructions">
+            Favor de confirmar tu asistencia antes del <strong>10 de Agosto de 2026</strong>. ¡Esperamos celebrar juntos!
+          </p>
+
+          <!-- Botón de Confirmación Directa por WhatsApp -->
+          <a id="whatsapp-rsvp-btn" href="#" target="_blank" rel="noopener noreferrer" class="whatsapp-rsvp-btn"
+            aria-label="Confirmar asistencia por WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.99.54 1.787.819 2.796.819 3.18 0 5.767-2.587 5.767-5.766.001-3.182-2.585-5.766-5.767-5.766zm0 10.455c-.931 0-1.745-.274-2.502-.751l-.179-.107-1.575.413.42-1.536-.118-.187c-.504-.799-.77-1.636-.769-2.52 0-2.617 2.13-4.746 4.748-4.746 2.617 0 4.746 2.129 4.746 4.746 0 2.618-2.129 4.746-4.746 4.746zm-6.273-10.457c-1.341 1.342-2.08 3.125-2.079 5.023 0 1.602.537 3.167 1.551 4.492l-1.644 6.005 6.147-1.612c1.272.693 2.704 1.059 4.167 1.06 4.095 0 7.822-3.328 7.823-7.424 0-1.983-.772-3.848-2.175-5.251-1.403-1.402-3.268-2.175-5.251-2.175-4.096 0-7.821 3.327-7.821 7.424z" />
+            </svg>
+            <span>CONFIRMAR VÍA WHATSAPP</span>
+          </a>
+
+          <!-- Botón para alternar formulario en línea con opciones -->
+          <button id="toggle-rsvp-form-btn" type="button" class="toggle-rsvp-form-btn">
+            <span>O CONFIRMA EN LÍNEA DIRECTAMENTE</span>
+            <svg id="form-chevron-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+
+          <!-- Formulario en línea interactivo con opciones -->
+          <form id="rsvp-online-form" class="rsvp-online-form hidden">
+            <div class="rsvp-form-group">
+              <label class="rsvp-label" for="guest-name">Nombre Completo o Familia</label>
+              <input id="guest-name" type="text" class="rsvp-input" placeholder="Ej. Familia Torres González"
+                required />
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;" class="rsvp-form-group">
+              <div>
+                <label class="rsvp-label" for="guest-passes">Pases</label>
+                <select id="guest-passes" class="rsvp-select">
+                  <option value="1">1 Persona</option>
+                  <option value="2" selected>2 Personas</option>
+                  <option value="3">3 Personas</option>
+                  <option value="4">4 Personas</option>
+                </select>
+              </div>
+              <div>
+                <label class="rsvp-label" for="guest-attending">¿Asistirás?</label>
+                <select id="guest-attending" class="rsvp-select">
+                  <option value="si" selected>¡Sí, ahí estaré!</option>
+                  <option value="no">Lo siento, no podré</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="rsvp-form-group">
+              <label class="rsvp-label" for="guest-message">Mensaje para los novios</label>
+              <textarea id="guest-message" class="rsvp-textarea" rows="2"
+                placeholder="Escribe unas palabras de felicitación..."></textarea>
+            </div>
+
+            <button type="submit" class="rsvp-submit-btn">
+              ENVIAR CONFIRMACIÓN
+            </button>
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         4. CIERRE FOTOGRÁFICO ROMÁNTICO
+         ========================================== -->
+    <footer class="footer-photo-card" data-purpose="footer-image-section">
+      <div class="footer-top-arch-mask wave-arch-bottom" aria-hidden="true"></div>
+      <div class="footer-image-box">
+        <img class="footer-couple-img" src="img/foto_3.jpg"
+          alt="Pedro y Lucía celebrando juntos bajo luces cálidas" />
+        <div class="footer-vignette-overlay">
+          <p class="footer-closing-names">Lucía &amp; Pedro</p>
+          <p class="footer-closing-quote">¡Gracias por ser parte de nuestra historia!</p>
+        </div>
+      </div>
+      <div class="footer-gold-bottom-bar"></div>
+    </footer>
+
+    <!-- ==========================================
+         5. PIE DE PÁGINA BIZFLOW (CONTACTO)
+         ========================================== -->
+    <footer class="bizflow-footer"
+      style="width: 100%; background: #141110; border-top: 1px solid rgba(197, 160, 89, 0.2); padding: 1rem 1rem; box-sizing: border-box; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.45rem; position: relative; z-index: 10;"
+      aria-label="BizFlow">
+      <a href="https://wa.me/?text=Hola%20BizFlow%2C%20quisiera%20cotizar%20una%20invitaci%C3%B3n%20digital"
+        target="_blank" rel="noopener noreferrer" title="BizFlow" style="display: inline-block;">
+        <img src="img/Bizflow_logo.png" alt="BizFlow"
+          style="height: 24px; width: auto; max-width: 130px; object-fit: contain; display: block; opacity: 0.9;" />
+      </a>
+      <div
+        style="display: flex; align-items: center; justify-content: center; gap: 0.6rem; flex-wrap: wrap; font-family: var(--font-sans); font-size: 0.8rem; color: rgba(255, 255, 255, 0.85);">
+        <span>¿Quieres una invitación como esta?</span>
+        <a href="https://wa.me/?text=Hola%20BizFlow%2C%20quisiera%20cotizar%20una%20invitaci%C3%B3n%20digital"
+          target="_blank" rel="noopener noreferrer"
+          style="font-weight: 600; font-size: 0.78rem; color: var(--wedding-gold-light); text-decoration: none;">
+          <span>Contáctanos</span>
+        </a>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Botón Flotante de Música -->
+  <button id="floating-music-btn" class="floating-music-btn is-paused" type="button"
+    aria-label="Pausar o reproducir música" title="Reproducir música">
+    <img src="iconos/music.gif" alt="Música de boda" />
+  </button>
+
+  <!-- Audio Local -->
+  <audio id="wedding-music" preload="auto" loop>
+    <source src="music/cancion_boda.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- Visor Lightbox -->
+  <div id="gallery-lightbox" class="hidden" role="dialog" aria-modal="true" aria-label="Visualizador de imágenes">
+    <button id="lightbox-close" type="button" aria-label="Cerrar visor">&times;</button>
+    <img id="lightbox-img" src="" alt="Fotografía ampliada" />
+  </div>
+
+  <!-- Notificación Toast Flotante -->
+  <div id="copy-toast" class="toast-notification" role="status" aria-live="polite">
+    <span>✨ ¡Confirmación lista!</span>
+  </div>
+
+  <!-- Scripts Modulares -->
+  <script src="js/config.js"></script>
+  <script src="js/envelope.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/music.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/rsvp.js"></script>
+  <script src="js/interactions.js"></script>
+  <script src="js/invitation.js"></script>
+</body>
+
+</html>

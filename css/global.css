@@ -1,0 +1,181 @@
+/* ==========================================================================
+   GLOBAL.CSS - PALETA MARSALA, CREMA Y DORADO + TIPOGRAFÍA Y BASES
+   BODA LUCÍA & PEDRO (DISEÑO STITCH AI - MODELO 03)
+   ========================================================================== */
+
+:root {
+  /* Paleta Oficial Stitch AI (Marsala, Terracota, Crema Papel y Dorado) */
+  --wedding-cream: #f9f6f0;
+  --wedding-cream-light: #fcfaf6;
+  --wedding-paper: #f7f3ec;
+  --wedding-ivory-50: #fdfbf7;
+  --wedding-ivory-100: #f9f5ec;
+  --wedding-ivory-200: #f1e9d8;
+
+  --wedding-gold: #c5a059;
+  --wedding-gold-light: #e6cf9c;
+  --wedding-gold-dark: #99732e;
+  --wedding-gold-champagne: #e6d3af;
+
+  --wedding-marsala: #783b3e;
+  --wedding-marsala-dark: #5e2a2c;
+  --wedding-marsala-deep: #4a2123;
+  --wedding-marsala-soft: #9c5356;
+  --wedding-terracotta-pill: #ab6566;
+
+  --wedding-text-dark: #443b38;
+  --wedding-text-muted: #7c736e;
+  --wedding-border: #d8cdbf;
+  --wedding-border-light: #e2d7c8;
+
+  /* Compatibilidad con componentes reutilizados */
+  --parchment: var(--wedding-paper);
+  --parchment-deep: var(--wedding-ivory-200);
+  --olive-dark: var(--wedding-marsala-dark);
+  --olive-deep: var(--wedding-marsala-deep);
+  --olive-muted: var(--wedding-marsala);
+  --gold-accent: var(--wedding-gold);
+  --gold-light: var(--wedding-gold-light);
+  --border-sep: var(--wedding-border);
+
+  /* Tipografías */
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-script: "Great Vibes", cursive;
+  --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Reset Global */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #242120;
+  color: var(--wedding-text-dark);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--wedding-gold);
+  color: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Clases de Tipografía */
+.font-serif,
+.font-cormorant {
+  font-family: var(--font-serif);
+}
+
+.font-display,
+.font-playfair {
+  font-family: var(--font-display);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.tracking-extra-wide {
+  letter-spacing: 0.28em;
+}
+
+.tracking-widest-plus {
+  letter-spacing: 0.35em;
+}
+
+/* Textura de Papel Artesanal Fino (Stitch AI) */
+.paper-texture,
+.bg-paper-texture {
+  background-color: var(--wedding-paper);
+  background-image: radial-gradient(#d6cbbd 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+}
+
+/* Fondo Degradado Marsala (Portada y Banners) */
+.marsala-gradient-bg {
+  background: linear-gradient(175deg, #7c3b3e 0%, #612c2f 55%, #4a2123 100%);
+}
+
+/* Curvas y Arcos Separadores */
+.wave-arch-top {
+  border-top-left-radius: 50% 60px;
+  border-top-right-radius: 50% 60px;
+}
+
+.wave-arch-bottom {
+  border-bottom-left-radius: 50% 70px;
+  border-bottom-right-radius: 50% 70px;
+}
+
+/* Separador con líneas doradas laterales */
+.gold-separator {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.gold-separator::before,
+.gold-separator::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: rgba(197, 160, 89, 0.55);
+}
+
+/* Utilidades generales */
+.hidden {
+  display: none !important;
+}
+
+.flex {
+  display: flex !important;
+}
