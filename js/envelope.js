@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       openBtnLabel.textContent = "Abriendo Invitación...";
     }
 
-    // 2. Después de mostrar la carta deslizándose, desvanecer hacia la invitación
+    // 2. Pausar un instante para apreciar la carta emergiendo antes de fundir suavemente hacia la web
     setTimeout(() => {
       if (envelopeScreen) {
         envelopeScreen.classList.add("closing-portal");
@@ -50,8 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (envelopeScreen) {
           envelopeScreen.classList.add("hidden");
         }
-      }, 900);
-    }, 1150);
+      }, 1650);
+    }, 2350);
   };
 
   if (envelopeStage) {

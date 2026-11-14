@@ -1,13 +1,13 @@
 /* ==========================================================================
    ENVELOPE.CSS - PANTALLA DE SOBRE 3D INTERACTIVO Y SELLO DE CERA DORADO
-   BODA LUCÍA & PEDRO (DISEÑO STITCH AI - CARPETA 1)
+   BODA LUCÍA & PEDRO (ESTÉTICA LIMPIA Y TRANSICIÓN CINEMÁTICA SUAVE)
    ========================================================================== */
 
 #envelope-screen {
   position: fixed;
   inset: 0;
   z-index: 100;
-  background-color: #fcfaf6;
+  background: radial-gradient(circle at 50% 42%, #fdfbf8 0%, #f6efe7 100%);
   color: #4a3b32;
   font-family: var(--font-sans);
   min-height: 100vh;
@@ -15,23 +15,22 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  overflow-x: hidden;
-  overflow-y: auto;
-  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 0.9s ease;
+  overflow: hidden;
+  transition: opacity 1.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 1.65s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 1.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 #envelope-screen.closing-portal {
   opacity: 0;
-  filter: blur(10px);
-  transform: scale(1.04);
+  filter: blur(8px);
+  transform: scale(1.025);
   pointer-events: none;
 }
 
-/* Fondo Ambiental con Textura y Ramas Botánicas Doradas */
+/* Fondo Ambiental Minimalista con Hojas Sutiles */
 .envelope-ambient-bg {
   position: fixed;
   inset: 0;
@@ -40,54 +39,22 @@
   overflow: hidden;
 }
 
-.envelope-ambient-dots {
+.envelope-leaf-corner {
   position: absolute;
-  inset: 0;
-  background-image: radial-gradient(#baa37a 1px, transparent 1px);
-  background-size: 24px 24px;
-  opacity: 0.16;
-}
-
-.botanical-corner-svg {
-  position: absolute;
-  color: rgba(203, 176, 129, 0.42);
+  width: 6.2rem;
+  height: auto;
+  opacity: 0.22;
   pointer-events: none;
 }
 
-.botanical-corner-svg.top-left {
-  top: -1.5rem;
-  left: -2rem;
-  width: 11rem;
-  height: 11rem;
-  transform: rotate(12deg);
-  opacity: 0.72;
+.envelope-leaf-corner.top-right {
+  top: 1rem;
+  right: -0.5rem;
 }
 
-.botanical-corner-svg.top-right {
-  top: -2.5rem;
-  right: -2rem;
-  width: 12rem;
-  height: 12rem;
-  transform: scaleX(-1) rotate(45deg);
-  opacity: 0.7;
-}
-
-.botanical-corner-svg.bottom-left {
-  bottom: -2.5rem;
-  left: -2.5rem;
-  width: 11rem;
-  height: 11rem;
-  transform: rotate(90deg);
-  opacity: 0.65;
-}
-
-.botanical-corner-svg.bottom-right {
-  bottom: -1.5rem;
-  right: -1.5rem;
-  width: 11rem;
-  height: 11rem;
-  transform: rotate(-12deg);
-  opacity: 0.75;
+.envelope-leaf-corner.bottom-left {
+  bottom: 1rem;
+  left: -0.5rem;
 }
 
 /* Contenedor Principal de la Pantalla del Sobre */
@@ -95,112 +62,20 @@
   position: relative;
   z-index: 10;
   width: 100%;
-  max-width: 448px;
+  max-width: 420px;
   min-height: 100vh;
   min-height: 100dvh;
   margin: 0 auto;
-  padding: 1.5rem 1rem;
+  padding: 2rem 1.25rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-/* Barra Superior: Monograma y Audio Pill */
-.envelope-topbar {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.25rem 0.5rem;
-}
-
-.envelope-topbar-monogram {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.envelope-topbar-initials {
-  font-family: var(--font-serif);
-  letter-spacing: 0.12em;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: rgba(122, 62, 62, 0.85);
-  border-bottom: 1px solid rgba(203, 176, 129, 0.55);
-  padding-bottom: 2px;
-}
-
-.envelope-topbar-date {
-  font-size: 10px;
-  color: #a8a29e;
-  letter-spacing: 0.06em;
-}
-
-.envelope-audio-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.38rem 0.75rem;
-  border-radius: 9999px;
-  background-color: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(203, 176, 129, 0.38);
-  backdrop-filter: blur(4px);
-  color: #7a3e3e;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-  font-size: 0.75rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.envelope-audio-pill:hover {
-  box-shadow: 0 3px 8px rgba(122, 62, 62, 0.12);
-}
-
-.envelope-audio-pill:active {
-  transform: scale(0.95);
-}
-
-.music-dot-wrap {
-  position: relative;
-  display: flex;
-  width: 8px;
-  height: 8px;
-}
-
-.music-dot-ping {
-  position: absolute;
-  inset: 0;
-  border-radius: 9999px;
-  background-color: #cbb081;
-  opacity: 0.75;
-  animation: pingRing 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-.music-dot-core {
-  position: relative;
-  display: inline-flex;
-  width: 8px;
-  height: 8px;
-  border-radius: 9999px;
-  background-color: #d6d3d1;
-}
-
-.music-dot-core.active {
-  background-color: #10b981;
-}
-
-.music-pill-label {
-  font-size: 11px;
-  font-weight: 500;
-  color: #57534e;
-}
-
 /* Bloque Central del Sobre */
 .envelope-center-hero {
-  margin: auto 0;
-  padding: 1rem 0;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -209,195 +84,165 @@
 
 .envelope-pretitle {
   font-family: var(--font-sans);
-  font-size: 11px;
+  font-size: 10.5px;
   text-transform: uppercase;
-  letter-spacing: 0.32em;
-  color: rgba(122, 62, 62, 0.9);
+  letter-spacing: 0.36em;
+  color: rgba(122, 62, 62, 0.78);
   font-weight: 500;
-}
-
-.envelope-ornament-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 0.25rem;
-  margin-bottom: 0.5rem;
-}
-
-.envelope-ornament-line {
-  height: 1px;
-  width: 1.5rem;
-  background-color: rgba(203, 176, 129, 0.65);
-}
-
-.envelope-ornament-symbol {
-  color: #cbb081;
-  font-size: 0.75rem;
+  margin-bottom: 0.35rem;
 }
 
 .envelope-main-names {
   font-family: var(--font-serif);
-  font-size: 2.5rem;
+  font-size: 2.55rem;
   letter-spacing: 0.03em;
-  color: #7a3e3e;
+  color: #6b3235;
   font-weight: 400;
   line-height: 1.15;
-  margin: 0.25rem 0;
+  margin: 0;
 }
 
 .envelope-main-names .amp-script {
   font-family: var(--font-script);
   font-size: 2.15rem;
-  color: #9d7c43;
+  color: #b08d4f;
   padding: 0 0.2rem;
 }
 
-.envelope-subtitle-quote {
-  font-family: var(--font-serif);
-  font-style: italic;
-  color: #57534e;
-  font-size: 0.92rem;
-  letter-spacing: 0.04em;
-  margin-top: 0.15rem;
+.envelope-header-rule {
+  width: 2.75rem;
+  height: 1px;
+  background-color: rgba(197, 160, 89, 0.55);
+  margin: 0.75rem auto 0 auto;
 }
 
 /* ==========================================================================
-   ESCENARIO DEL SOBRE 3D INTERACTIVO
+   ESCENARIO DEL SOBRE 3D INTERACTIVO Y CARTA EDITORIAL
    ========================================================================== */
 .envelope-container {
   position: relative;
   width: 100%;
-  max-width: 340px;
-  height: 270px;
-  margin: 2.2rem auto 1.5rem auto;
+  max-width: 330px;
+  height: 235px;
+  margin: 2.6rem auto 1.75rem auto;
   perspective: 1200px;
   cursor: pointer;
   user-select: none;
+  transition: transform 1.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Interior del Sobre (Terciopelo Terracota Profundo) */
+.envelope-container.opened {
+  transform: translateY(22px);
+}
+
+/* Interior del Sobre (Terciopelo Marsala Profundo) */
 .envelope-back-lining {
   position: absolute;
   inset: 0;
-  background-color: #653131;
-  border-radius: 1rem;
-  box-shadow: 0 20px 45px -10px rgba(60, 25, 25, 0.4), 0 0 2px rgba(0, 0, 0, 0.1);
+  background-color: #5c2b2d;
+  border-radius: 0.85rem;
+  box-shadow: 0 22px 48px -12px rgba(60, 22, 24, 0.32),
+              0 4px 14px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  border: 1px solid rgba(203, 176, 129, 0.35);
+  border: 1px solid rgba(197, 160, 89, 0.32);
 }
 
 .envelope-back-inner-frame {
   position: absolute;
-  inset: 0.5rem;
-  border: 1px solid rgba(203, 176, 129, 0.22);
-  border-radius: 0.75rem;
-  background-color: #592a2a;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  inset: 0.45rem;
+  border: 1px solid rgba(197, 160, 89, 0.16);
+  border-radius: 0.6rem;
+  background-color: #512426;
 }
 
-.envelope-lining-watermark {
-  color: rgba(230, 211, 175, 0.15);
-  font-family: var(--font-serif);
-  font-size: 4.25rem;
-  font-weight: 300;
-  font-style: italic;
-}
-
-/* Carta Interior Deslizable */
+/* Carta Interior Deslizable (Limpia, Minimalista y Editorial) */
 .letter-card {
   position: absolute;
-  left: 0.75rem;
-  right: 0.75rem;
-  top: 0.75rem;
-  height: 240px;
+  left: 1rem;
+  right: 1rem;
+  top: 1.15rem;
+  height: 195px;
   background-color: #fdfbf7;
-  border-radius: 0.75rem;
-  padding: 1rem;
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.15);
-  border: 1px solid #e8ddcb;
+  border-radius: 0.65rem;
+  padding: 1.35rem 1.25rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border: 1px solid #eadfce;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   text-align: center;
   z-index: 5;
   overflow: hidden;
-  transition: transform 0.9s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.6s ease;
+  transform: translateY(8px) scale(0.98);
+  opacity: 0.92;
+  transition: transform 1.65s cubic-bezier(0.16, 1, 0.3, 1) 0.32s,
+              box-shadow 1.65s cubic-bezier(0.16, 1, 0.3, 1) 0.32s,
+              opacity 0.8s ease 0.25s;
 }
 
 .envelope-container.opened .letter-card {
-  transform: translateY(-130px);
-  box-shadow: 0 15px 35px rgba(70, 20, 20, 0.25);
+  transform: translateY(-102px) scale(1.02);
+  opacity: 1;
+  box-shadow: 0 18px 40px rgba(65, 22, 24, 0.22);
 }
 
 .letter-inner-border {
   position: absolute;
-  inset: 0.375rem;
-  border: 1px solid rgba(203, 176, 129, 0.42);
-  border-radius: 0.5rem;
+  inset: 0.45rem;
+  border: 1px solid rgba(197, 160, 89, 0.38);
+  border-radius: 0.45rem;
   pointer-events: none;
 }
 
+.letter-content-wrap {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
 .letter-badge-top {
-  font-size: 9px;
+  font-size: 8.5px;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: #9c7842;
-  font-weight: 600;
-  display: block;
+  letter-spacing: 0.32em;
+  color: #a6844b;
+  font-weight: 500;
   margin-bottom: 0.15rem;
 }
 
 .letter-couple-title {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
-  color: #7a3e3e;
-  letter-spacing: 0.06em;
-  font-weight: 600;
+  font-size: 1.55rem;
+  color: #6b3235;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  line-height: 1.15;
 }
 
 .letter-gold-rule {
-  width: 3rem;
+  width: 2.25rem;
   height: 1px;
-  background-color: rgba(203, 176, 129, 0.7);
-  margin: 0.25rem auto;
-}
-
-.letter-day-label {
-  font-size: 11px;
-  color: #78716c;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
+  background-color: rgba(197, 160, 89, 0.6);
+  margin: 0.35rem auto;
 }
 
 .letter-date-main {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: #3d2727;
-  margin: 0.15rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #442b2b;
 }
 
 .letter-event-sub {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: 0.78rem;
-  color: #57534e;
-}
-
-.letter-footer-note {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  font-size: 0.75rem;
-  color: #7a3e3e;
-  font-weight: 500;
-  border-top: 1px solid rgba(203, 176, 129, 0.32);
-  padding-top: 0.35rem;
+  font-size: 0.85rem;
+  color: #78716c;
+  margin-top: 0.05rem;
 }
 
 /* Bolsillo Frontal Inferior del Sobre */
@@ -406,13 +251,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  height: 175px;
-  background: linear-gradient(to top, #673333, #7a3e3e);
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
+  height: 150px;
+  background: linear-gradient(180deg, #74393b 0%, #612d2f 100%);
+  border-bottom-left-radius: 0.85rem;
+  border-bottom-right-radius: 0.85rem;
   z-index: 7;
-  border-top: 1px solid rgba(245, 227, 181, 0.22);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(226, 197, 137, 0.25);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -421,26 +266,19 @@
 
 .envelope-pocket-stitch {
   position: absolute;
-  inset: 0.5rem;
-  border-bottom: 1px solid rgba(203, 176, 129, 0.4);
-  border-left: 1px solid rgba(203, 176, 129, 0.4);
-  border-right: 1px solid rgba(203, 176, 129, 0.4);
-  border-bottom-left-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
+  inset: 0.55rem;
+  border-bottom: 1px solid rgba(203, 176, 129, 0.28);
+  border-left: 1px solid rgba(203, 176, 129, 0.28);
+  border-right: 1px solid rgba(203, 176, 129, 0.28);
+  border-bottom-left-radius: 0.55rem;
+  border-bottom-right-radius: 0.55rem;
   pointer-events: none;
-}
-
-.envelope-pocket-folds {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.2;
 }
 
 .envelope-pocket-text {
   position: relative;
   z-index: 10;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   padding: 0 1rem;
   text-align: center;
 }
@@ -448,49 +286,8 @@
 .envelope-pocket-script {
   font-family: var(--font-script);
   font-size: 1.35rem;
-  color: #e6d3af;
-}
-
-.envelope-pocket-hint {
-  font-family: var(--font-sans);
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: rgba(249, 245, 236, 0.72);
-  margin-top: 0.15rem;
-}
-
-/* Cinta de Seda Central */
-.ribbon-band {
-  position: absolute;
-  top: 88px;
-  left: 0;
-  right: 0;
-  height: 36px;
-  background: linear-gradient(90deg, #e3dac9 0%, #f7f3eb 50%, #e3dac9 100%);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  z-index: 8;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top: 1px solid rgba(203, 176, 129, 0.45);
-  border-bottom: 1px solid rgba(203, 176, 129, 0.45);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.ribbon-band span {
-  font-family: var(--font-sans);
-  font-size: 9px;
-  letter-spacing: 0.28em;
-  color: #7a3e3e;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-
-.envelope-container.opened .ribbon-band {
-  opacity: 0;
-  transform: scaleX(1.1);
-  pointer-events: none;
+  color: rgba(238, 220, 186, 0.92);
+  letter-spacing: 0.02em;
 }
 
 /* Solapa Triangular Superior (3D) */
@@ -499,11 +296,12 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 115px;
+  height: 112px;
   z-index: 9;
-  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.22));
+  filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.18));
   transform-origin: top center;
-  transition: transform 0.85s cubic-bezier(0.4, 0, 0.2, 1), z-index 0.3s;
+  transition: transform 1.25s cubic-bezier(0.22, 1, 0.36, 1),
+              z-index 0.1s linear 0.45s;
   backface-visibility: visible;
   clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
 }
@@ -511,38 +309,35 @@
 .envelope-flap-inner {
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, #834343, #713737);
+  background: linear-gradient(180deg, #7e3f41 0%, #6b3335 100%);
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .envelope-flap-trim {
   position: absolute;
-  left: 0.25rem;
-  right: 0.25rem;
+  left: 0.35rem;
+  right: 0.35rem;
   top: 0;
-  height: 110px;
-  opacity: 0.7;
+  height: 106px;
+  opacity: 0.55;
   pointer-events: none;
   clip-path: polygon(2% 0%, 98% 0%, 50% 96%);
-  border-bottom: 1.5px solid #d4b57e;
+  border-bottom: 1px solid #d4b57e;
 }
 
 .envelope-container.opened .envelope-flap {
-  transform: rotateX(175deg);
+  transform: rotateX(176deg);
   z-index: 4;
 }
 
-/* Sello de Cera 3D Dorado */
+/* Sello de Cera 3D Dorado Minimalista */
 .wax-seal {
   position: absolute;
-  top: 75px;
+  top: 76px;
   left: 50%;
   transform: translateX(-50%);
-  width: 66px;
-  height: 66px;
+  width: 60px;
+  height: 60px;
   border-radius: 9999px;
   z-index: 12;
   cursor: pointer;
@@ -550,23 +345,24 @@
   align-items: center;
   justify-content: center;
   user-select: none;
-  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-  animation: softPulseSeal 2.8s infinite ease-in-out;
+  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.65s ease;
+  animation: softPulseSeal 3.2s infinite ease-in-out;
 }
 
 @keyframes softPulseSeal {
   0%, 100% {
     transform: translateX(-50%) scale(1);
-    filter: drop-shadow(0 4px 10px rgba(184, 147, 82, 0.4));
+    filter: drop-shadow(0 4px 10px rgba(70, 30, 20, 0.32));
   }
   50% {
-    transform: translateX(-50%) scale(1.05);
-    filter: drop-shadow(0 6px 16px rgba(220, 180, 110, 0.65));
+    transform: translateX(-50%) scale(1.04);
+    filter: drop-shadow(0 6px 14px rgba(180, 140, 75, 0.48));
   }
 }
 
 .envelope-container.opened .wax-seal {
-  transform: translateX(-50%) scale(0.6) translateY(-40px);
+  transform: translateX(-50%) scale(0.75) translateY(-24px);
   opacity: 0;
   pointer-events: none;
   animation: none;
@@ -576,11 +372,10 @@
   width: 100%;
   height: 100%;
   border-radius: 9999px;
-  background: linear-gradient(45deg, #947132, #e2c589, #8d6928);
-  padding: 4px;
-  box-shadow: 0 6px 16px rgba(100, 60, 20, 0.45),
-              inset 0 2px 4px rgba(255, 255, 255, 0.4),
-              inset 0 -3px 6px rgba(90, 50, 15, 0.6);
+  background: linear-gradient(135deg, #9f7b3a 0%, #e4c88e 50%, #8f6b29 100%);
+  padding: 3.5px;
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.45),
+              inset 0 -2px 5px rgba(80, 45, 12, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -590,56 +385,44 @@
   width: 100%;
   height: 100%;
   border-radius: 9999px;
-  background-color: #af8843;
-  border: 1px solid rgba(253, 232, 184, 0.65);
+  background: radial-gradient(circle at 35% 30%, #c49d56 0%, #a57e39 75%, #8d6928 100%);
+  border: 1px solid rgba(253, 232, 184, 0.55);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  box-shadow: inset 0 2px 5px rgba(60, 35, 5, 0.35);
+  box-shadow: inset 0 2px 5px rgba(60, 35, 5, 0.3);
   position: relative;
   overflow: hidden;
 }
 
 .wax-seal-glare {
   position: absolute;
-  top: -0.75rem;
-  left: -0.75rem;
-  width: 2rem;
-  height: 2rem;
-  background-color: rgba(255, 255, 255, 0.35);
+  top: -0.6rem;
+  left: -0.6rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: rgba(255, 255, 255, 0.28);
   border-radius: 9999px;
   filter: blur(2px);
   pointer-events: none;
 }
 
-.wax-seal-wreath {
-  width: 2.5rem;
-  height: 2.5rem;
-  color: #543b12;
+.wax-seal-inner-ring {
   position: absolute;
-  opacity: 0.45;
+  inset: 5px;
+  border-radius: 9999px;
+  border: 1px solid rgba(74, 48, 12, 0.28);
+  pointer-events: none;
 }
 
 .wax-seal-initials {
   font-family: var(--font-serif);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 0.78rem;
   letter-spacing: 0.08em;
-  color: #3d2908;
-  text-shadow: 0 1px 1px rgba(255, 245, 215, 0.7);
+  color: #3b2607;
+  text-shadow: 0 1px 1px rgba(255, 245, 215, 0.65);
   z-index: 10;
-}
-
-.wax-seal-year {
-  font-size: 7px;
-  color: #4d340d;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  z-index: 10;
-  margin-top: -2px;
 }
 
 /* Botón Principal «Abrir Invitación» */
@@ -647,66 +430,55 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.envelope-container.opened ~ .envelope-cta-wrap {
+  opacity: 0.45;
+  transform: translateY(6px);
+  pointer-events: none;
 }
 
 .open-envelope-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  padding: 0.8rem 1.65rem;
+  justify-content: center;
+  padding: 0.78rem 2rem;
   border-radius: 9999px;
-  background: linear-gradient(90deg, #7a3e3e, #5a2b2b);
+  background: linear-gradient(135deg, #74393b 0%, #58282b 100%);
   color: #fdfbf7;
-  box-shadow: 0 10px 25px rgba(122, 62, 62, 0.28);
-  font-size: 0.75rem;
+  box-shadow: 0 8px 22px rgba(107, 50, 53, 0.22);
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
   font-weight: 500;
-  border: 1px solid rgba(203, 176, 129, 0.55);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(203, 176, 129, 0.48);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .open-envelope-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(122, 62, 62, 0.38);
+  box-shadow: 0 12px 26px rgba(107, 50, 53, 0.3);
 }
 
 .open-envelope-btn:active {
-  transform: scale(0.96);
+  transform: scale(0.97);
 }
 
 .open-envelope-subhint {
-  font-size: 11px;
-  color: #a8a29e;
-  margin-top: 0.55rem;
-  letter-spacing: 0.03em;
-}
-
-/* Pie de la Pantalla del Sobre */
-.envelope-footer {
-  width: 100%;
-  padding: 0.5rem 0;
-  text-align: center;
-}
-
-.envelope-footer-inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  color: #a8a29e;
-  font-size: 0.78rem;
-  font-family: var(--font-serif);
-  font-style: italic;
+  font-size: 10.5px;
+  color: #9c948c;
+  margin-top: 0.6rem;
+  letter-spacing: 0.06em;
 }
 
 @media (min-width: 640px) {
   .envelope-main-names {
-    font-size: 3rem;
+    font-size: 2.85rem;
   }
   .envelope-container {
-    max-width: 360px;
-    height: 280px;
+    max-width: 350px;
+    height: 245px;
   }
 }

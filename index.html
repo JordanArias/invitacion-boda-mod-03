@@ -29,80 +29,30 @@
 
   <!-- ====================================================================
        PANTALLA INICIAL: SOBRE 3D INTERACTIVO Y SELLO DE CERA DORADO
-       (Diseño Stitch AI - Carpeta 1)
        ==================================================================== -->
   <div id="envelope-screen" data-purpose="interactive-envelope-screen" aria-label="Sobre de invitación interactivo">
 
-    <!-- Decoración Ambiental de Fondo (Textura y Ramas Botánicas Doradas) -->
+    <!-- Decoración Ambiental Sutil y Limpia -->
     <div class="envelope-ambient-bg" aria-hidden="true">
-      <div class="envelope-ambient-dots"></div>
-
-      <!-- Rama Botánica Superior Izquierda -->
-      <svg class="botanical-corner-svg top-left" fill="currentColor" viewBox="0 0 100 100">
-        <path
-          d="M12,90 C30,75 45,45 85,15 C65,30 35,45 25,75 Z M32,58 C24,52 22,40 28,34 C34,28 46,30 42,42 C38,54 34,56 32,58 Z M52,42 C44,36 42,24 48,18 C54,12 66,14 62,26 C58,38 54,40 52,42 Z M68,28 C62,22 62,12 68,6 C74,2 84,6 80,16 C76,26 70,26 68,28 Z"
-          opacity="0.8"></path>
-      </svg>
-
-      <!-- Rama Botánica Superior Derecha -->
-      <svg class="botanical-corner-svg top-right" fill="currentColor" viewBox="0 0 100 100">
-        <path
-          d="M10,90 Q40,60 85,12 C60,40 30,65 15,85 M30,55 C22,48 24,35 32,30 C40,25 50,30 45,42 M55,38 C48,30 50,18 58,14 C66,10 75,16 70,28"
-          fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"></path>
-      </svg>
-
-      <!-- Rama Botánica Inferior Izquierda -->
-      <svg class="botanical-corner-svg bottom-left" fill="currentColor" viewBox="0 0 100 100">
-        <path d="M15,95 Q50,55 90,20 Q40,50 15,95" fill="none" stroke="currentColor" stroke-width="2"></path>
-        <circle cx="50" cy="55" fill="currentColor" opacity="0.6" r="4"></circle>
-        <circle cx="70" cy="38" fill="currentColor" opacity="0.6" r="3.5"></circle>
-      </svg>
-
-      <!-- Rama Botánica Inferior Derecha -->
-      <svg class="botanical-corner-svg bottom-right" fill="currentColor" viewBox="0 0 100 100">
-        <path
-          d="M90,90 C70,75 55,45 15,15 C35,30 65,45 75,75 Z M68,58 C76,52 78,40 72,34 C66,28 54,30 58,42 C62,54 66,56 68,58 Z M48,42 C56,36 58,24 52,18 C46,12 34,14 38,26 C42,38 46,40 48,42 Z"
-          opacity="0.75"></path>
-      </svg>
+      <div class="envelope-leaf-corner top-right leaf-wind-right leaf-wind-slow">
+        <img src="img/hoja.png" alt="" />
+      </div>
+      <div class="envelope-leaf-corner bottom-left leaf-wind-left">
+        <img src="img/hoja.png" alt="" />
+      </div>
     </div>
 
     <!-- Contenedor Principal del Sobre -->
     <div class="envelope-shell">
 
-      <!-- Barra Superior: Monograma y Botón Rápido de Música -->
-      <header class="envelope-topbar" data-purpose="top-nav-bar">
-        <div class="envelope-topbar-monogram">
-          <span class="envelope-topbar-initials">L &amp; P</span>
-          <span class="envelope-topbar-date">| 27.08.2026</span>
-        </div>
-
-        <button id="bg-music-toggle" type="button" class="envelope-audio-pill" aria-label="Reproducir música de fondo">
-          <span class="music-dot-wrap">
-            <span id="music-ping" class="music-dot-ping hidden"></span>
-            <span id="music-dot" class="music-dot-core"></span>
-          </span>
-          <svg style="width: 14px; height: 14px; color: #7a3e3e;" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"></path>
-          </svg>
-          <span id="music-text" class="music-pill-label">Perfect</span>
-        </button>
-      </header>
-
       <!-- Centro Hero: Título y Sobre 3D -->
       <div class="envelope-center-hero">
-        <div>
-          <p class="envelope-pretitle">Nuestra Boda</p>
-          <div class="envelope-ornament-row" aria-hidden="true">
-            <span class="envelope-ornament-line"></span>
-            <span class="envelope-ornament-symbol">✤</span>
-            <span class="envelope-ornament-line"></span>
-          </div>
-        </div>
+        <p class="envelope-pretitle">NUESTRA BODA</p>
 
         <h1 class="envelope-main-names">
           Lucía <span class="amp-script">&amp;</span> Pedro
         </h1>
-        <p class="envelope-subtitle-quote">"Dos vidas, un mismo camino"</p>
+        <div class="envelope-header-rule" aria-hidden="true"></div>
 
         <!-- Sobre 3D Interactivo -->
         <section id="envelope-stage" class="envelope-container" data-purpose="interactive-envelope"
@@ -110,52 +60,28 @@
 
           <!-- Forro Interior del Sobre -->
           <div class="envelope-back-lining">
-            <div class="envelope-back-inner-frame">
-              <div class="envelope-lining-watermark">L &amp; P</div>
-            </div>
+            <div class="envelope-back-inner-frame"></div>
           </div>
 
-          <!-- Carta Interior Deslizable -->
+          <!-- Carta Interior Deslizable (Diseño Limpio y Editorial) -->
           <article id="sliding-letter" class="letter-card" data-purpose="inner-card-preview">
             <div class="letter-inner-border"></div>
 
-            <div style="padding-top: 0.35rem; position: relative; z-index: 10;">
-              <span class="letter-badge-top">Invitación de Honor</span>
-              <h2 class="letter-couple-title">LUCÍA &amp; PEDRO</h2>
+            <div class="letter-content-wrap">
+              <span class="letter-badge-top">INVITACIÓN</span>
+              <h2 class="letter-couple-title">Lucía &amp; Pedro</h2>
               <div class="letter-gold-rule"></div>
-            </div>
-
-            <div style="position: relative; z-index: 10;">
-              <p class="letter-day-label">SÁBADO</p>
-              <p class="letter-date-main">27 · AGOSTO · 2026</p>
-              <p class="letter-event-sub">Ceremonia &amp; Recepción Social</p>
-            </div>
-
-            <div style="padding-bottom: 0.25rem; position: relative; z-index: 10; width: 100%;">
-              <div class="letter-footer-note">
-                <span>Para: Nuestra Familia y Amigos</span>
-              </div>
+              <p class="letter-date-main">27 · 08 · 2026</p>
+              <p class="letter-event-sub">Nos casamos</p>
             </div>
           </article>
 
           <!-- Bolsillo Frontal Inferior -->
           <div class="envelope-pocket-front">
             <div class="envelope-pocket-stitch"></div>
-            <div class="envelope-pocket-folds" aria-hidden="true">
-              <svg style="width: 100%; height: 100%;" preserveAspectRatio="none" viewBox="0 0 340 175">
-                <line stroke="#f6e1b6" stroke-width="1.5" x1="0" x2="170" y1="175" y2="75"></line>
-                <line stroke="#f6e1b6" stroke-width="1.5" x1="340" x2="170" y1="175" y2="75"></line>
-              </svg>
-            </div>
             <div class="envelope-pocket-text">
               <p class="envelope-pocket-script">Estás cordialmente invitado</p>
-              <p class="envelope-pocket-hint">Toca para abrir la carta</p>
             </div>
-          </div>
-
-          <!-- Cinta de Seda Central -->
-          <div class="ribbon-band">
-            <span>Nuestra Historia de Amor</span>
           </div>
 
           <!-- Solapa Triangular Superior -->
@@ -170,13 +96,8 @@
             <div class="wax-seal-rim">
               <div class="wax-seal-disc">
                 <div class="wax-seal-glare"></div>
-                <svg class="wax-seal-wreath" fill="currentColor" viewBox="0 0 100 100">
-                  <path
-                    d="M20,65 C20,40 35,25 50,15 C65,25 80,40 80,65 C70,75 60,82 50,85 C40,82 30,75 20,65 Z"
-                    fill="none" stroke="currentColor" stroke-dasharray="6,4" stroke-width="4"></path>
-                </svg>
+                <div class="wax-seal-inner-ring"></div>
                 <span class="wax-seal-initials">L • P</span>
-                <span class="wax-seal-year">2026</span>
               </div>
             </div>
           </div>
@@ -186,29 +107,11 @@
         <!-- Botón de Acción Principal -->
         <div class="envelope-cta-wrap">
           <button id="open-envelope-btn" type="button" class="open-envelope-btn" data-purpose="open-envelope-trigger">
-            <span style="color: #f5e3b5; font-size: 0.88rem;">✉</span>
             <span id="open-envelope-label">Abrir Invitación</span>
-            <svg style="width: 14px; height: 14px; color: #f5e3b5;" fill="none" stroke="currentColor"
-              viewBox="0 0 24 24">
-              <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-            </svg>
           </button>
-          <p class="open-envelope-subhint">Haz clic en el sobre o el sello para desplegar</p>
+          <p class="open-envelope-subhint">Toca el sello para abrir</p>
         </div>
       </div>
-
-      <!-- Pie de Pantalla del Sobre -->
-      <footer class="envelope-footer">
-        <div class="envelope-footer-inner">
-          <span>Con amor</span>
-          <svg style="width: 12px; height: 12px; color: #7a3e3e;" fill="currentColor" viewBox="0 0 24 24">
-            <path
-              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z">
-            </path>
-          </svg>
-          <span>Lucía &amp; Pedro</span>
-        </div>
-      </footer>
 
     </div>
   </div>

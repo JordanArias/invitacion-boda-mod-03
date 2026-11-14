@@ -22,11 +22,11 @@
 /* 2. Entrada Cinemática Inicial al Comienzo (Apertura con Difuminado Romántico) */
 .page-dreamy-entrance {
   opacity: 0;
-  filter: blur(14px);
+  filter: blur(12px);
   transform: scale(0.985);
-  transition: opacity 1.8s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 1.8s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 2.2s cubic-bezier(0.22, 1, 0.36, 1),
+              filter 2.2s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 2.2s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, filter, transform;
 }
 
