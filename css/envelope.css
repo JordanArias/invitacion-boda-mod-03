@@ -473,12 +473,62 @@
   letter-spacing: 0.06em;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
+  .envelope-shell {
+    max-width: 560px;
+  }
   .envelope-main-names {
-    font-size: 2.85rem;
+    font-size: 3.1rem;
   }
   .envelope-container {
-    max-width: 350px;
-    height: 245px;
+    max-width: 380px;
+    height: 260px;
+  }
+  .letter-card {
+    height: 215px;
+  }
+  .envelope-pocket-front {
+    height: 165px;
+  }
+  .envelope-flap {
+    height: 122px;
+  }
+  .wax-seal {
+    top: 84px;
+    width: 64px;
+    height: 64px;
+  }
+  .envelope-leaf-corner {
+    width: 8.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .envelope-shell {
+    max-width: 640px;
+  }
+  .envelope-main-names {
+    font-size: 3.45rem;
+  }
+  .envelope-container {
+    max-width: 410px;
+    height: 275px;
+  }
+  .letter-card {
+    height: 228px;
+  }
+  .envelope-pocket-front {
+    height: 175px;
+  }
+  .envelope-flap {
+    height: 130px;
+  }
+  .wax-seal {
+    top: 90px;
+    width: 68px;
+    height: 68px;
+  }
+  .envelope-leaf-corner {
+    width: 10.5rem;
   }
 }

@@ -61,7 +61,7 @@ html {
 }
 
 body {
-  background-color: #242120;
+  background-color: var(--wedding-cream);
   color: var(--wedding-text-dark);
   font-family: var(--font-sans);
   font-size: 16px;

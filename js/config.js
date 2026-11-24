@@ -18,18 +18,18 @@ const WEDDING_CONFIG = {
     fraseSobre: "“Dos vidas, un mismo camino”"
   },
   fecha: {
-    diaSemana: "Sábado",
-    diaNumero: "27",
-    mesNombre: "Agosto",
-    mesNumero: "08",
+    diaSemana: "Martes",
+    diaNumero: "24",
+    mesNombre: "Noviembre",
+    mesNumero: "11",
     anio: "2026",
-    fechaPuntos: "27 · 08 · 2026",
-    fechaCorta: "27.08.2026",
-    fechaTexto: "27 de Agosto de 2026",
-    fechaLimiteRsvp: "10 de Agosto de 2026",
+    fechaPuntos: "24 · 11 · 2026",
+    fechaCorta: "24.11.2026",
+    fechaTexto: "24 de Noviembre de 2026",
+    fechaLimiteRsvp: "10 de Noviembre de 2026",
     // Fecha y hora en formato ISO para la cuenta regresiva y Google Calendar
-    fechaHoraISO: "2026-08-27T20:00:00",
-    fechaFinISO: "2026-08-28T03:00:00"
+    fechaHoraISO: "2026-11-24T15:00:00",
+    fechaFinISO: "2026-11-24T23:00:00"
   },
   bienvenida: {
     titulo: "BIENVENIDOS",
@@ -45,7 +45,7 @@ const WEDDING_CONFIG = {
     titulo: "Ceremonia Religiosa",
     lugar: "Iglesia Santa Isabel",
     direccion: "Av. Principal Nº123",
-    hora: "20:00 hrs.",
+    hora: "15:00 hrs.",
     mapsUrl: "https://maps.google.com/?q=Iglesia+Santa+Isabel+Av+Principal+123"
   },
   recepcion: {
@@ -67,7 +67,7 @@ const WEDDING_CONFIG = {
   },
   itinerario: [
     {
-      hora: "20:00 hrs.",
+      hora: "15:00 hrs.",
       evento: "Ceremonia Religiosa",
       icono: "iconos/libro.gif"
     },
@@ -111,7 +111,7 @@ const WEDDING_CONFIG = {
   },
   whatsapp: {
     telefono: "59170000000", // Número de WhatsApp para confirmaciones (con código de país)
-    mensajePredefinido: "¡Hola Lucía y Pedro! Confirmo con mucha alegría mi asistencia a su boda el 27 de Agosto de 2026."
+    mensajePredefinido: "¡Hola Lucía y Pedro! Confirmo con mucha alegría mi asistencia a su boda el 24 de Noviembre de 2026."
   },
   musica: {
     archivo: "music/cancion_boda.mp3",

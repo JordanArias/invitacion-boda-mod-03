@@ -6,7 +6,7 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const configDate = window.WEDDING_CONFIG?.fecha?.fechaHoraISO || "2026-08-27T20:00:00";
+  const configDate = window.WEDDING_CONFIG?.fecha?.fechaHoraISO || "2026-11-24T15:00:00";
   const weddingDate = new Date(configDate);
 
   const daysEl = document.getElementById("days");
@@ -16,16 +16,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateCountdown() {
     const now = new Date();
-    let diff = weddingDate.getTime() - now.getTime();
+    const diff = weddingDate.getTime() - now.getTime();
 
-    // Si la fecha configurada ya pasó respecto al reloj del sistema,
-    // proyectar al próximo 27 de agosto para mantener el contador activo en demostraciones
+    // Si la fecha configurada ya llegó o pasó, mantener el contador en 0 sin reiniciar
     if (diff <= 0) {
-      const nextTarget = new Date(now.getFullYear(), 7, 27, 20, 0, 0);
-      if (nextTarget <= now) {
-        nextTarget.setFullYear(now.getFullYear() + 1);
-      }
-      diff = nextTarget.getTime() - now.getTime();
+      if (daysEl) daysEl.textContent = "0";
+      if (hoursEl) hoursEl.textContent = "00";
+      if (minutesEl) minutesEl.textContent = "00";
+      if (secondsEl) secondsEl.textContent = "00";
+      return;
     }
 
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -54,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const location = encodeURIComponent(
       `${window.WEDDING_CONFIG.ceremonia.lugar}, ${window.WEDDING_CONFIG.ceremonia.direccion}`
     );
-    const dates = "20260828T000000Z/20260828T070000Z";
+    const dates = "20261124T150000/20261124T230000";
     calendarBtn.href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
   }
 });
